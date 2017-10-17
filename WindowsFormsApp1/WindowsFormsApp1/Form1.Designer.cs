@@ -33,11 +33,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1279, 507);
+            this.button1.Location = new System.Drawing.Point(667, 271);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(277, 107);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Play";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -48,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(1644, 678);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Podcast player";
             this.ResumeLayout(false);
 
         }
