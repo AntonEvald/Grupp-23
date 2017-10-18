@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "WindowsFormsApp1\GUI.csproj", "{5C483C21-CA18-4A25-871C-99D5B06ADA63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary1\ClassLibrary.csproj", "{D53C6EC2-138C-45EF-B5A4-97AB5E113EB5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FE3D0FD-9787-4A49-850D-F169415DCA48} = {1FE3D0FD-9787-4A49-850D-F169415DCA48}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "ClassLibrary2\DataAccess.csproj", "{1FE3D0FD-9787-4A49-850D-F169415DCA48}"
 EndProject
