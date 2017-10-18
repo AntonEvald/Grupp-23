@@ -10,16 +10,41 @@ namespace ClassLibrary1
     {
         public static List <string> Categories = new List<string>();
 
-        public void AddCategory(String c)
+        public static void AddCategory(String c)
         {
-            if(c == null || Categories.Contains(c))
+            try
+            {
+                if (validateNewCat(c))
+                {
+                    Categories.Add(c);
+                }
+            }
+            catch (Exception)
             {
 
+                throw;
             }
-            else
+
+        }
+
+        public static bool validateNewCat(string c)
+        {
+            try
             {
-                Categories.Add(c);
+                if (c == null || Categories.Contains(c))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
     }
 }

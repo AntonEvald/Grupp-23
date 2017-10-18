@@ -35,11 +35,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(735, 321);
+            this.button1.Location = new System.Drawing.Point(1161, 33);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(277, 107);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Play";
+            this.button1.Text = "Add Category";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -49,18 +49,23 @@
             this.listBox1.ItemHeight = 31;
             this.listBox1.Location = new System.Drawing.Point(41, 43);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(476, 593);
+            this.listBox1.Size = new System.Drawing.Size(672, 593);
             this.listBox1.TabIndex = 1;
             // 
             // categoryCombo
             // 
             this.categoryCombo.BackColor = System.Drawing.SystemColors.HighlightText;
             this.categoryCombo.FormattingEnabled = true;
-            this.categoryCombo.Location = new System.Drawing.Point(733, 51);
+            this.categoryCombo.Items.AddRange(new object[] {
+            "Alla",
+            "Komedi",
+            "Drama",
+            "Historia",
+            "Musik"});
+            this.categoryCombo.Location = new System.Drawing.Point(735, 43);
             this.categoryCombo.Name = "categoryCombo";
             this.categoryCombo.Size = new System.Drawing.Size(379, 39);
             this.categoryCombo.TabIndex = 3;
-            this.categoryCombo.Text = "Category";
             this.categoryCombo.SelectedIndexChanged += new System.EventHandler(this.categoryCombo_SelectedIndexChanged);
             // 
             // Form1
