@@ -26,11 +26,25 @@ namespace WindowsFormsApp1
         private void OKbtn_Click(object sender, EventArgs e)
         {
             string category = textBox1.Text;
-            if (ModifyCategories.validateNewCat(category))
+            try
             {
-                ModifyCategories.AddCategory(category);
-                Form1.fillCombo();
+                if (ModifyCategories.validateNewCat(category) is true)
+                {
+                    ModifyCategories.AddCategory(category);
+                    MessageBox.Show("tillagt");
+                    MessageBox.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Ej giltig");
+                }
             }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        
            
             
         }
