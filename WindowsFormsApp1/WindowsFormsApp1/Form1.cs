@@ -27,12 +27,13 @@ namespace WindowsFormsApp1
 
         private void categoryCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         public void fillCombo()
         {
             List <string> list = ModifyCategories.Categories;
+            categoryCombo.Items.Clear();
             for (int i = 0; i < list.Count; i++)
             {
                 string category = list[i];
@@ -43,6 +44,11 @@ namespace WindowsFormsApp1
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void categoryCombo_Click(object sender, EventArgs e)
+        {
+            fillCombo();
         }
     }
 }

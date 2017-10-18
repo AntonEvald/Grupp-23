@@ -31,8 +31,8 @@ namespace WindowsFormsApp1
                 if (ModifyCategories.validateNewCat(category) is true)
                 {
                     ModifyCategories.AddCategory(category);
-                    MessageBox.Show("tillagt");
-                    MessageBox.Show();
+                    MessageBox.Show("Tillagt");
+                    Close();
                 }
                 else
                 {
