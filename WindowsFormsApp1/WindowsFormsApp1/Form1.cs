@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
 
         }
 
-        public static void fillCombo()
+        public void fillCombo()
         {
             List <string> list = ModifyCategories.Categories;
             for (int i = 0; i < list.Count; i++)
@@ -38,6 +38,11 @@ namespace WindowsFormsApp1
                 string category = list[i];
                 categoryCombo.Items.Add(category);
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

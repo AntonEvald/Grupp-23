@@ -31,9 +31,10 @@ namespace ClassLibrary1
         {
             try
             {
-                if (c == null || Categories.Contains(c))
+                if (c.Equals("") || Categories.Contains(c))
                 {
                     return false;
+                    
                 }
                 else
                 {
