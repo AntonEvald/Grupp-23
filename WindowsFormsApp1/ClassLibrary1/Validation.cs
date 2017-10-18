@@ -10,29 +10,18 @@ namespace ClassLibrary1
 {
     public class Validation
     {
-        public static bool textNotEmpty(string s)
+        public static bool textEmpty(string s)
         {
-            try
-            {
-                if (s == "" )
-                {
-                    return true;
-                    throw new System.ArgumentException("Textfield is empty");
-
-
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
             
-        }
+            if (s == "" )
+            {
+                return true;   
+            }
+            else
+            {
+                return false;
+            }
+        } 
     }
 
 }

@@ -35,9 +35,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1161, 33);
+            this.button1.Location = new System.Drawing.Point(435, 14);
+            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(277, 107);
+            this.button1.Size = new System.Drawing.Size(104, 45);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add Category";
             this.button1.UseVisualStyleBackColor = true;
@@ -46,10 +47,10 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 31;
-            this.listBox1.Location = new System.Drawing.Point(41, 43);
+            this.listBox1.Location = new System.Drawing.Point(15, 18);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(672, 593);
+            this.listBox1.Size = new System.Drawing.Size(254, 251);
             this.listBox1.TabIndex = 1;
             // 
             // categoryCombo
@@ -62,20 +63,22 @@
             "Drama",
             "Historia",
             "Musik"});
-            this.categoryCombo.Location = new System.Drawing.Point(735, 43);
+            this.categoryCombo.Location = new System.Drawing.Point(276, 18);
+            this.categoryCombo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.categoryCombo.Name = "categoryCombo";
-            this.categoryCombo.Size = new System.Drawing.Size(379, 39);
+            this.categoryCombo.Size = new System.Drawing.Size(145, 21);
             this.categoryCombo.TabIndex = 3;
             this.categoryCombo.SelectedIndexChanged += new System.EventHandler(this.categoryCombo_SelectedIndexChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1644, 678);
+            this.ClientSize = new System.Drawing.Size(614, 284);
             this.Controls.Add(this.categoryCombo);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "Form1";
             this.Text = "Podcast player";
             this.ResumeLayout(false);
