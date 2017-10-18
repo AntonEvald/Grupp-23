@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary1;
 
 namespace WindowsFormsApp1
 {
@@ -15,11 +16,28 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            fillCombo();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            AddCategory ac = new AddCategory();
+            ac.Show();
+        }
 
+        private void categoryCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public static void fillCombo()
+        {
+            List <string> list = ModifyCategories.Categories;
+            for (int i = 0; i < list.Count; i++)
+            {
+                string category = list[i];
+                categoryCombo.Items.Add(category);
+            }
         }
     }
 }
