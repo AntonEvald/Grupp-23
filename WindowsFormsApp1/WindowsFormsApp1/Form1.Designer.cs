@@ -50,7 +50,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 31;
-            this.listBox1.Location = new System.Drawing.Point(40, 43);
+            this.listBox1.Location = new System.Drawing.Point(12, 21);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(671, 593);
@@ -59,17 +59,14 @@
             // 
             // categoryCombo
             // 
-            this.categoryCombo.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.categoryCombo.BackColor = System.Drawing.SystemColors.Control;
             this.categoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryCombo.FormattingEnabled = true;
             this.categoryCombo.Items.AddRange(new object[] {
-            "Alla",
-            "Komedi",
-            "Drama",
-            "Historia",
-            "Musik"});
+            "All"});
             this.categoryCombo.Location = new System.Drawing.Point(736, 43);
             this.categoryCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.categoryCombo.MaxDropDownItems = 10;
             this.categoryCombo.Name = "categoryCombo";
             this.categoryCombo.Size = new System.Drawing.Size(380, 39);
             this.categoryCombo.TabIndex = 3;

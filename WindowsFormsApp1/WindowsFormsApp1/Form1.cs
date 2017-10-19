@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class Start : Form
     {
+       
         public Start()
         {
             InitializeComponent();
@@ -34,11 +35,13 @@ namespace WindowsFormsApp1
         {
             List <string> list = ModifyCategories.Categories;
             categoryCombo.Items.Clear();
+            categoryCombo.Items.Add("All");
             for (int i = 0; i < list.Count; i++)
             {
                 string category = list[i];
                 categoryCombo.Items.Add(category);
             }
+            categoryCombo.SelectedIndex = 0;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
