@@ -55,17 +55,35 @@
     <Compile Include="AddCategory.Designer.cs">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddFeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFeed.Designer.cs">
+      <DependentUpon>AddFeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangeCategory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChangeCategory.Designer.cs">
       <DependentUpon>ChangeCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Feeds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feeds.Designer.cs">
+      <DependentUpon>Feeds.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainPage.Designer.cs">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,11 +96,20 @@
     <EmbeddedResource Include="AddCategory.resx">
       <DependentUpon>AddCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddFeed.resx">
+      <DependentUpon>AddFeed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangeCategory.resx">
       <DependentUpon>ChangeCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Feeds.resx">
+      <DependentUpon>Feeds.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainPage.resx">
+      <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
