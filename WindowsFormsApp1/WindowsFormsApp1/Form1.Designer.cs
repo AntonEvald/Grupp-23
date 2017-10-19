@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class Start
     {
         /// <summary>
         /// Required designer variable.
@@ -60,6 +60,7 @@
             // categoryCombo
             // 
             this.categoryCombo.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.categoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryCombo.FormattingEnabled = true;
             this.categoryCombo.Items.AddRange(new object[] {
             "Alla",
@@ -95,18 +96,19 @@
             this.changeCatBtn.UseVisualStyleBackColor = true;
             this.changeCatBtn.Click += new System.EventHandler(this.changeCatBtn_Click);
             // 
-            // Form1
+            // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1637, 677);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1888, 992);
             this.Controls.Add(this.changeCatBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.categoryCombo);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
+            this.Name = "Start";
             this.Text = "Podcast player";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
