@@ -50,5 +50,11 @@ namespace WindowsFormsApp1
         {
             fillCombo();
         }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            RemoveCategory rc = new RemoveCategory();
+            rc.Show();
+        }
     }
 }

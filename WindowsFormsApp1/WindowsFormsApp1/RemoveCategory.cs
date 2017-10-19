@@ -21,7 +21,17 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            string category = removeCombo.GetItemText(this.removeCombo.SelectedItem);
+            if(category != "")
+            {
+                ModifyCategories.Categories.Remove(category);
+                MessageBox.Show("Kategorin: " + category + " har tagits bort!");
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Ingen kategori vald!");
+            }
         }
 
         public void fillRemoveCombo()

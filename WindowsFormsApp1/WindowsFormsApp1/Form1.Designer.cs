@@ -31,14 +31,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.categoryCombo = new System.Windows.Forms.ComboBox();
+            this.removeBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(435, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(1);
+            this.button1.Location = new System.Drawing.Point(1160, 33);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 45);
+            this.button1.Size = new System.Drawing.Size(277, 71);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add Category";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,10 +48,11 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(15, 18);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(1);
+            this.listBox1.ItemHeight = 31;
+            this.listBox1.Location = new System.Drawing.Point(40, 43);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(254, 251);
+            this.listBox1.Size = new System.Drawing.Size(671, 593);
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -64,23 +66,34 @@
             "Drama",
             "Historia",
             "Musik"});
-            this.categoryCombo.Location = new System.Drawing.Point(276, 18);
-            this.categoryCombo.Margin = new System.Windows.Forms.Padding(1);
+            this.categoryCombo.Location = new System.Drawing.Point(736, 43);
+            this.categoryCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.categoryCombo.Name = "categoryCombo";
-            this.categoryCombo.Size = new System.Drawing.Size(145, 21);
+            this.categoryCombo.Size = new System.Drawing.Size(380, 39);
             this.categoryCombo.TabIndex = 3;
             this.categoryCombo.SelectedIndexChanged += new System.EventHandler(this.categoryCombo_SelectedIndexChanged);
             this.categoryCombo.Click += new System.EventHandler(this.categoryCombo_Click);
             // 
+            // removeBtn
+            // 
+            this.removeBtn.Location = new System.Drawing.Point(1160, 158);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Size = new System.Drawing.Size(277, 66);
+            this.removeBtn.TabIndex = 4;
+            this.removeBtn.Text = "Remove Category";
+            this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 284);
+            this.ClientSize = new System.Drawing.Size(1637, 677);
+            this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.categoryCombo);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Podcast player";
             this.ResumeLayout(false);
@@ -92,6 +105,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox categoryCombo;
+        private System.Windows.Forms.Button removeBtn;
     }
 }
 
