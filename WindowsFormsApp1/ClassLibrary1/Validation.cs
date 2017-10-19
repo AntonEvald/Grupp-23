@@ -13,7 +13,7 @@ namespace ClassLibrary1
         public static bool textEmpty(string s)
         {
             
-            if (s == "" )
+            if (s == "" || s== null)
             {
                 return true;   
             }
@@ -35,6 +35,7 @@ namespace ClassLibrary1
                 return false;
             }
         }
+        
 
     }
 

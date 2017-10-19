@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.urlTB = new System.Windows.Forms.TextBox();
             this.urlLabel = new System.Windows.Forms.Label();
             this.addFeedBtn = new System.Windows.Forms.Button();
             this.addFeedCategoryCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // urlTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(213, 20);
-            this.textBox1.TabIndex = 0;
+            this.urlTB.Location = new System.Drawing.Point(12, 118);
+            this.urlTB.Name = "urlTB";
+            this.urlTB.Size = new System.Drawing.Size(213, 20);
+            this.urlTB.TabIndex = 0;
             // 
             // urlLabel
             // 
@@ -59,6 +59,7 @@
             this.addFeedBtn.TabIndex = 2;
             this.addFeedBtn.Text = "Add Feed";
             this.addFeedBtn.UseVisualStyleBackColor = true;
+            this.addFeedBtn.Click += new System.EventHandler(this.addFeedBtn_Click);
             // 
             // addFeedCategoryCB
             // 
@@ -86,7 +87,7 @@
             this.Controls.Add(this.addFeedCategoryCB);
             this.Controls.Add(this.addFeedBtn);
             this.Controls.Add(this.urlLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.urlTB);
             this.Name = "AddFeed";
             this.Text = "AddFeed";
             this.Load += new System.EventHandler(this.AddFeed_Load);
@@ -97,7 +98,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox urlTB;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Button addFeedBtn;
         private System.Windows.Forms.ComboBox addFeedCategoryCB;
