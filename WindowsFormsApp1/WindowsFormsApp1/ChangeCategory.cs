@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         {
             string category = changeCombo.GetItemText(this.changeCombo.SelectedItem);
             string newCategory = ChangeToField.Text;
-            if(category != "" && newCategory != "")
+            if(category != "" && ModifyCategories.validateNewCat(newCategory))
             {
                 ModifyCategories.RemoveCategory(category);
                 ModifyCategories.AddCategory(newCategory);
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
         private void changeCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string item = changeCombo.GetItemText(this.changeCombo.SelectedItem);
-            ChangeToField.AppendText(item);
+            ChangeToField.Text = item;
         }
     }
 }

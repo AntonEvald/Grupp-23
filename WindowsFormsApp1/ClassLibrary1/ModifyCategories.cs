@@ -42,23 +42,21 @@ namespace ClassLibrary1
 
         public static bool validateNewCat(string c)
         {
-            try
+            foreach (string category in Categories)
             {
-                if (c.Equals("") || Categories.Contains(c))
+                if (c.Equals(category, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return false;
-                    
-                }
-                else
-                {
-                    return true;
                 }
             }
-            catch (Exception)
+            if (c.Equals("") || c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
             {
-                throw;
+                return false;
             }
-
+            else
+            {
+                return true;
+            }
         }
         public static void SaveCategories()
         {
