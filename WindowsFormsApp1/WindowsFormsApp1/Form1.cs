@@ -27,17 +27,40 @@ namespace WindowsFormsApp1
 
         private void categoryCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
-        public static void fillCombo()
+        public void fillCombo()
         {
             List <string> list = ModifyCategories.Categories;
+            categoryCombo.Items.Clear();
             for (int i = 0; i < list.Count; i++)
             {
                 string category = list[i];
                 categoryCombo.Items.Add(category);
             }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoryCombo_Click(object sender, EventArgs e)
+        {
+            fillCombo();
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            RemoveCategory rc = new RemoveCategory();
+            rc.Show();
+        }
+
+        private void changeCatBtn_Click(object sender, EventArgs e)
+        {
+            ChangeCategory cc = new ChangeCategory();
+            cc.Show();
         }
     }
 }

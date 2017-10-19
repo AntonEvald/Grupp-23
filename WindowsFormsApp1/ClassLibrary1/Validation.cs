@@ -4,20 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace ClassLibrary1
 {
-    class Validation
+    public class Validation
     {
-        public static bool IsXML(string s)
+        public static bool textEmpty(string s)
         {
-            if (s.Contains("/rss"))
+            
+            if (s == "" )
             {
-                return true;
+                return true;   
             }
             else
             {
                 return false;
             }
-        }
+        } 
     }
+
 }
