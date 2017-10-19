@@ -8,6 +8,16 @@ namespace ClassLibrary1
 {
     class Validation
     {
-
+        public static bool IsXML(string s)
+        {
+            if (s.Contains("/rss"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
