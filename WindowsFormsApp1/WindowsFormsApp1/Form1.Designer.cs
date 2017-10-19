@@ -32,6 +32,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.categoryCombo = new System.Windows.Forms.ComboBox();
             this.removeBtn = new System.Windows.Forms.Button();
+            this.changeCatBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -84,11 +85,22 @@
             this.removeBtn.UseVisualStyleBackColor = true;
             this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
+            // changeCatBtn
+            // 
+            this.changeCatBtn.Location = new System.Drawing.Point(1160, 280);
+            this.changeCatBtn.Name = "changeCatBtn";
+            this.changeCatBtn.Size = new System.Drawing.Size(277, 58);
+            this.changeCatBtn.TabIndex = 5;
+            this.changeCatBtn.Text = "Change Categories";
+            this.changeCatBtn.UseVisualStyleBackColor = true;
+            this.changeCatBtn.Click += new System.EventHandler(this.changeCatBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1637, 677);
+            this.Controls.Add(this.changeCatBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.categoryCombo);
             this.Controls.Add(this.listBox1);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ComboBox categoryCombo;
         private System.Windows.Forms.Button removeBtn;
+        private System.Windows.Forms.Button changeCatBtn;
     }
 }
 

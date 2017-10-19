@@ -56,5 +56,11 @@ namespace WindowsFormsApp1
             RemoveCategory rc = new RemoveCategory();
             rc.Show();
         }
+
+        private void changeCatBtn_Click(object sender, EventArgs e)
+        {
+            ChangeCategory cc = new ChangeCategory();
+            cc.Show();
+        }
     }
 }
