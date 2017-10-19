@@ -13,9 +13,9 @@ namespace ClassLibrary1
 
     public class Fetch_Podcast
     {
-        public XmlDocument pod; 
-        
-            public bool PodcastObject(string s)
+        public XmlDocument pod;
+
+        public bool PodcastObject(string s)
         {
             if (Validation.IsXML(s))
             {
@@ -28,7 +28,7 @@ namespace ClassLibrary1
                 return false;
             }
         }
-
+    }
 }
 
 
