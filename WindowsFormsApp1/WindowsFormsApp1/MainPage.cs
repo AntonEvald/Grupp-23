@@ -32,5 +32,11 @@ namespace WindowsFormsApp1
             Feeds F = new Feeds();
             F.Show();
         }
+
+        private void categoriesBtn_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
     }
 }
