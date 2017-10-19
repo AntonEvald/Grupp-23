@@ -13,7 +13,7 @@ namespace ClassLibrary1
 
     public class Fetch_Podcast
     {
-        XmlDocument pod; 
+        public XmlDocument pod; 
         
             public bool PodcastObject(string s)
         {
@@ -28,9 +28,6 @@ namespace ClassLibrary1
                 return false;
             }
         }
-
-        
-    }
 
 }
 

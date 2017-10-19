@@ -21,7 +21,23 @@ namespace ClassLibrary1
             {
                 return false;
             }
-        } 
+        }
+
+
+        public static bool IsXML(string s)
+        {
+            if (s.Contains("/rss"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
+
+   
 
 }
