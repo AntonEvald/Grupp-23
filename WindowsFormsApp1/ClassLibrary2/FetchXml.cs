@@ -4,39 +4,36 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace ClassLibrary2
 {
     public class FetchXml
     {
 
-        public List<string> DownloadXmlTitles()
+        public static XmlDocument DownloadXml(string s)
         {
+           
             //Ladda hem XML.
-            List<string> hej = new List<string>();
             var xml = "";
             using (var client = new System.Net.WebClient())
             {
                 client.Encoding = Encoding.UTF8;
-                xml = client.DownloadString("http://joeroganexp.joerogan.libsynpro.com/rss");
+                xml = client.DownloadString(s);
             }
 
             //Skapa en objektrepresentation.
             var dom = new System.Xml.XmlDocument();
             dom.LoadXml(xml);
 
-            //Iterera igenom elementet item.
-            foreach (System.Xml.XmlNode item
-               in dom.DocumentElement.SelectNodes("channel/item"))
-            {
-                //Skriv ut dess titel.
-                var title = item.SelectSingleNode("title");
-                hej.Add(title.InnerText);
-            }
-            return hej;
+            return dom;
+
         }
+
     }
+}
 
     
    
-}
+
