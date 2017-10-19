@@ -41,6 +41,7 @@
             this.changeCombo.Name = "changeCombo";
             this.changeCombo.Size = new System.Drawing.Size(337, 39);
             this.changeCombo.TabIndex = 0;
+            this.changeCombo.SelectedIndexChanged += new System.EventHandler(this.changeCombo_SelectedIndexChanged);
             // 
             // changeBtn
             // 

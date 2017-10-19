@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ClassLibrary1
 {
@@ -58,6 +59,40 @@ namespace ClassLibrary1
                 throw;
             }
 
+        }
+        public static void SaveCategories()
+        {
+            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string dirPath = path + "categories.txt";
+            StreamWriter textWriter = new StreamWriter(new FileStream(dirPath, FileMode.OpenOrCreate, FileAccess.ReadWrite));
+            try
+            {
+                foreach(string category in Categories)
+                {
+                    textWriter.WriteLine(category);
+                }
+                textWriter.Close();
+            }
+            catch (IOException)
+            {
+
+                throw;
+            }
+
+        }
+
+        public static void GetCategories()
+        {
+            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string dirPath = path + "categories.txt";
+            StreamReader sr = new StreamReader(new FileStream(dirPath, FileMode.OpenOrCreate, FileAccess.Read));
+            while(sr.Peek() != -1)
+            {
+                string category = sr.ReadLine();
+                Categories.Add(category);
+            }
+            sr.Close();
+            
         }
     }
 }
