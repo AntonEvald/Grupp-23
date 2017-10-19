@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 263);
+            this.ClientSize = new System.Drawing.Size(947, 324);
             this.Controls.Add(this.changeCatBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.categoryCombo);
