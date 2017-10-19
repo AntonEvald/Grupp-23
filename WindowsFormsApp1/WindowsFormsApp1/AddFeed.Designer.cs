@@ -31,7 +31,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.urlLabel = new System.Windows.Forms.Label();
             this.addFeedBtn = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.addFeedCategoryCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -60,13 +60,13 @@
             this.addFeedBtn.Text = "Add Feed";
             this.addFeedBtn.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // addFeedCategoryCB
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.addFeedCategoryCB.FormattingEnabled = true;
+            this.addFeedCategoryCB.Location = new System.Drawing.Point(12, 49);
+            this.addFeedCategoryCB.Name = "addFeedCategoryCB";
+            this.addFeedCategoryCB.Size = new System.Drawing.Size(121, 21);
+            this.addFeedCategoryCB.TabIndex = 3;
             // 
             // label1
             // 
@@ -83,12 +83,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(415, 231);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.addFeedCategoryCB);
             this.Controls.Add(this.addFeedBtn);
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.textBox1);
             this.Name = "AddFeed";
             this.Text = "AddFeed";
+            this.Load += new System.EventHandler(this.AddFeed_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,7 +100,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Button addFeedBtn;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox addFeedCategoryCB;
         private System.Windows.Forms.Label label1;
     }
 }
