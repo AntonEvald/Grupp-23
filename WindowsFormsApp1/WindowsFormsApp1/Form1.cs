@@ -62,5 +62,15 @@ namespace WindowsFormsApp1
             ChangeCategory cc = new ChangeCategory();
             cc.Show();
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ModifyCategories.SaveCategories();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ModifyCategories.GetCategories();
+        }
     }
 }

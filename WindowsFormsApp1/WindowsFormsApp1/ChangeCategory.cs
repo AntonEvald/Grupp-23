@@ -27,6 +27,12 @@ namespace WindowsFormsApp1
             {
                 ModifyCategories.RemoveCategory(category);
                 ModifyCategories.AddCategory(newCategory);
+                MessageBox.Show("Kategorin: " + category + " har ändrats till: " + newCategory);
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Ej giltigt!");
             }
         }
 
@@ -44,6 +50,12 @@ namespace WindowsFormsApp1
                 string category = list[i];
                 changeCombo.Items.Add(category);
             }
+        }
+
+        private void changeCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string item = changeCombo.GetItemText(this.changeCombo.SelectedItem);
+            ChangeToField.AppendText(item);
         }
     }
 }
