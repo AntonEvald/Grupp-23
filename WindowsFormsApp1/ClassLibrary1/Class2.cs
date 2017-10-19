@@ -63,8 +63,9 @@ namespace ClassLibrary1
         public static void SaveCategories()
         {
             string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string dirPath = path + "categories.txt";
-            StreamWriter textWriter = new StreamWriter(new FileStream(dirPath, FileMode.OpenOrCreate, FileAccess.ReadWrite));
+            string directory = Path.GetDirectoryName(path);
+            string dirPath = directory + "//categories.txt";
+            StreamWriter textWriter = new StreamWriter(dirPath, false);
             try
             {
                 foreach(string category in Categories)
@@ -84,15 +85,24 @@ namespace ClassLibrary1
         public static void GetCategories()
         {
             string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string dirPath = path + "categories.txt";
-            StreamReader sr = new StreamReader(new FileStream(dirPath, FileMode.OpenOrCreate, FileAccess.Read));
-            while(sr.Peek() != -1)
+            string directory = Path.GetDirectoryName(path);
+            string dirPath = directory + "//categories.txt";
+            if(!File.Exists(dirPath))
             {
-                string category = sr.ReadLine();
-                Categories.Add(category);
+                StreamWriter sw = new StreamWriter(dirPath, false);
+                sw.Close();
             }
-            sr.Close();
-            
+            else
+            {
+                Categories.Clear();
+                StreamReader sr = new StreamReader(dirPath, false);
+                while (sr.Peek() != -1)
+                {
+                    string category = sr.ReadLine();
+                    Categories.Add(category);
+                }
+                sr.Close();
+            }      
         }
     }
 }
