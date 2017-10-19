@@ -36,6 +36,7 @@
             // 
             // changeCombo
             // 
+            this.changeCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.changeCombo.FormattingEnabled = true;
             this.changeCombo.Location = new System.Drawing.Point(165, 100);
             this.changeCombo.Name = "changeCombo";

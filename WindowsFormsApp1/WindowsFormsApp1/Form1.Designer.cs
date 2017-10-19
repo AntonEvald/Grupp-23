@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class Start
     {
         /// <summary>
         /// Required designer variable.
@@ -37,10 +37,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(435, 14);
-            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button1.Location = new System.Drawing.Point(1160, 33);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 30);
+            this.button1.Size = new System.Drawing.Size(277, 71);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add Category";
             this.button1.UseVisualStyleBackColor = true;
@@ -49,16 +49,18 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(15, 18);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.listBox1.ItemHeight = 31;
+            this.listBox1.Location = new System.Drawing.Point(40, 43);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(254, 251);
+            this.listBox1.Size = new System.Drawing.Size(671, 593);
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // categoryCombo
             // 
             this.categoryCombo.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.categoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryCombo.FormattingEnabled = true;
             this.categoryCombo.Items.AddRange(new object[] {
             "Alla",
@@ -66,20 +68,19 @@
             "Drama",
             "Historia",
             "Musik"});
-            this.categoryCombo.Location = new System.Drawing.Point(276, 18);
-            this.categoryCombo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.categoryCombo.Location = new System.Drawing.Point(736, 43);
+            this.categoryCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.categoryCombo.Name = "categoryCombo";
-            this.categoryCombo.Size = new System.Drawing.Size(145, 21);
+            this.categoryCombo.Size = new System.Drawing.Size(380, 39);
             this.categoryCombo.TabIndex = 3;
             this.categoryCombo.SelectedIndexChanged += new System.EventHandler(this.categoryCombo_SelectedIndexChanged);
             this.categoryCombo.Click += new System.EventHandler(this.categoryCombo_Click);
             // 
             // removeBtn
             // 
-            this.removeBtn.Location = new System.Drawing.Point(435, 66);
-            this.removeBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.removeBtn.Location = new System.Drawing.Point(1160, 158);
             this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(104, 28);
+            this.removeBtn.Size = new System.Drawing.Size(277, 66);
             this.removeBtn.TabIndex = 4;
             this.removeBtn.Text = "Remove Category";
             this.removeBtn.UseVisualStyleBackColor = true;
@@ -87,27 +88,27 @@
             // 
             // changeCatBtn
             // 
-            this.changeCatBtn.Location = new System.Drawing.Point(435, 117);
-            this.changeCatBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.changeCatBtn.Location = new System.Drawing.Point(1160, 280);
             this.changeCatBtn.Name = "changeCatBtn";
-            this.changeCatBtn.Size = new System.Drawing.Size(104, 24);
+            this.changeCatBtn.Size = new System.Drawing.Size(277, 58);
             this.changeCatBtn.TabIndex = 5;
             this.changeCatBtn.Text = "Change Categories";
             this.changeCatBtn.UseVisualStyleBackColor = true;
             this.changeCatBtn.Click += new System.EventHandler(this.changeCatBtn_Click);
             // 
-            // Form1
+            // Start
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(947, 324);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1888, 992);
             this.Controls.Add(this.changeCatBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.categoryCombo);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "Start";
             this.Text = "Podcast player";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);

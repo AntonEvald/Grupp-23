@@ -11,9 +11,9 @@ using ClassLibrary1;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Start : Form
     {
-        public Form1()
+        public Start()
         {
             InitializeComponent();
             fillCombo();

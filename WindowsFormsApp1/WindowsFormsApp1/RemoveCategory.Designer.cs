@@ -34,17 +34,20 @@
             // 
             // removeCombo
             // 
+            this.removeCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.removeCombo.FormattingEnabled = true;
-            this.removeCombo.Location = new System.Drawing.Point(25, 105);
+            this.removeCombo.Location = new System.Drawing.Point(67, 250);
+            this.removeCombo.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.removeCombo.Name = "removeCombo";
-            this.removeCombo.Size = new System.Drawing.Size(121, 21);
+            this.removeCombo.Size = new System.Drawing.Size(316, 39);
             this.removeCombo.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 105);
+            this.button1.Location = new System.Drawing.Point(525, 250);
+            this.button1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(200, 55);
             this.button1.TabIndex = 1;
             this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = true;
@@ -52,11 +55,12 @@
             // 
             // RemoveCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(779, 622);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.removeCombo);
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "RemoveCategory";
             this.Text = "RemoveCategory";
             this.ResumeLayout(false);
