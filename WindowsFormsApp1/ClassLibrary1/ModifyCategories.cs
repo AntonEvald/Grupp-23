@@ -49,7 +49,7 @@ namespace ClassLibrary1
                     return false;
                 }
             }
-            if (c.Equals("") || c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
+            if (Validation.textEmpty(c) || c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
             {
                 return false;
             }
@@ -58,6 +58,7 @@ namespace ClassLibrary1
                 return true;
             }
         }
+
         public static void SaveCategories()
         {
             string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
