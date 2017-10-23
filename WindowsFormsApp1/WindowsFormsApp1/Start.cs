@@ -26,11 +26,6 @@ namespace WindowsFormsApp1
             ac.Show();
         }
 
-        private void categoryCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         public void fillCombo()
         {
             List <string> list = ModifyCategories.Categories;
@@ -42,11 +37,6 @@ namespace WindowsFormsApp1
                 categoryCombo.Items.Add(category);
             }
             categoryCombo.SelectedIndex = 0;
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void categoryCombo_Click(object sender, EventArgs e)
@@ -74,6 +64,12 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             ModifyCategories.GetCategories();
+        }
+
+        private void feedsBtn_Click(object sender, EventArgs e)
+        {
+            Feeds F = new Feeds();
+            F.Show();
         }
     }
 }

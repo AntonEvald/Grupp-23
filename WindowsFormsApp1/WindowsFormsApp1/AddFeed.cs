@@ -17,60 +17,44 @@ namespace WindowsFormsApp1
         public AddFeed()
         {
             InitializeComponent();
-            fillCombo();
+            FillCombo();
         }
 
-        private void AddFeed_Load(object sender, EventArgs e)
-        {
-            ModifyCategories.GetCategories();
-            fillCombo();
-        }
-        public void fillCombo()
+        public void FillCombo()
         {
             List<string> list = ModifyCategories.Categories;
-            addFeedCategoryCB.Items.Clear();
+            AddFeedCategoryCB.Items.Clear();
             for (int i = 0; i < list.Count; i++)
             {
                 string category = list[i];
-                addFeedCategoryCB.Items.Add(category);
+                AddFeedCategoryCB.Items.Add(category);
             }
         }
-       
-        private void addFeedCategoryCB_Click(object sender, EventArgs e)
-        {
-            fillCombo();
-        }
 
-        private void addFeedBtn_Click(object sender, EventArgs e)
+        private void AddFeedBtn_Click(object sender, EventArgs e)
         {
-            
             try {
-                var chosenCat = addFeedCategoryCB.SelectedItem;
+                string chosenCat = AddFeedCategoryCB.SelectedItem.ToString();
                 string chosenUrl = urlTB.Text;
-                if (chosenCat != null )
+                if (!Validation.textEmpty(chosenCat))
                 {
-                    if (!Validation.textEmpty(chosenUrl) && Validation.IsXML(chosenUrl))
+                    if (Validation.IsXML(chosenUrl))
                     {
-                        /*if ()
-                        {
-
-                        }*/
 
                     }
                     else
                     {
-                        MessageBox.Show("Du måste ange en giltig URL");
+                        MessageBox.Show("Du måste ange en giltig url");
                     }
                 }
                 else
                 {
                     MessageBox.Show("Du måste ange en kategori");
-                    
                 }
-                
             }
             catch (Exception)
-            { 
+            {
+               
                 throw;
             }
         }
@@ -79,6 +63,11 @@ namespace WindowsFormsApp1
         {
             AddCategory ac = new AddCategory();
             ac.Show();
+        }
+
+        private void AddFeedCategoryCB_MouseClick(object sender, MouseEventArgs e)
+        {
+            FillCombo();
         }
     }
 }
