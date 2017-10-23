@@ -22,6 +22,18 @@ namespace ClassLibrary1
                 return false;
             }
         }
+        public static bool isNull(string s)
+        {
+            if(s == null)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
 
 
         public static bool IsXML(string s)

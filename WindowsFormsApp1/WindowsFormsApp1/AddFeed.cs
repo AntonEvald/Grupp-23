@@ -43,29 +43,20 @@ namespace WindowsFormsApp1
 
         private void addFeedBtn_Click(object sender, EventArgs e)
         {
+            
             try {
-                string chosenCat = addFeedCategoryCB.SelectedItem.ToString();
+                string? chosenCat = addFeedCategoryCB.SelectedItem.ToString();
                 string chosenUrl = urlTB.Text;
-                if (!Validation.textEmpty(chosenCat))
+                if (!Validation.isNull(chosenCat))
                 {
-                    if (Validation.IsXML(chosenUrl))
-                    {
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Du måste ange en giltig url");
-                    }
+                   
                 }
-                else
-                {
-                    MessageBox.Show("Du måste ange en kategori");
-                }
+                
             }
             catch (Exception)
             {
-               
                 throw;
+               
             }
         }
     }
