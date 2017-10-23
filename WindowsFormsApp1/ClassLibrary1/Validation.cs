@@ -23,6 +23,24 @@ namespace ClassLibrary1
             }
         }
 
+        public static bool validateNewCat(string c)
+        {
+            foreach (string category in ModifyCategories.Categories)
+            {
+                if (c.Equals(category, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return false;
+                }
+            }
+            if (Validation.textEmpty(c) || c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         public static bool IsXML(string s)
         {

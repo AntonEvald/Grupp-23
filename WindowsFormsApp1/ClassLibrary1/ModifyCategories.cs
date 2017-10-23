@@ -40,24 +40,7 @@ namespace ClassLibrary1
 
         }
 
-        public static bool validateNewCat(string c)
-        {
-            foreach (string category in Categories)
-            {
-                if (c.Equals(category, StringComparison.InvariantCultureIgnoreCase))
-                {
-                    return false;
-                }
-            }
-            if (Validation.textEmpty(c) || c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+
 
         public static void SaveCategories()
         {
