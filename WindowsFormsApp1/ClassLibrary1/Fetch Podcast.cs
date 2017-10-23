@@ -33,11 +33,12 @@ namespace ClassLibrary1
             return b;
         }
 
-       /* public List<String> Episodes()
+
+        public List<String> Episodes(XmlDocument e)
         {
             List<string> episodes = new List<string>();
             foreach (System.Xml.XmlNode item
-         in pod.DocumentElement.SelectNodes("channel/item"))
+         in e.DocumentElement.SelectNodes("channel/item"))
             {
                 //Skriv ut dess titel.
                 var title = item.SelectSingleNode("title");
@@ -46,23 +47,12 @@ namespace ClassLibrary1
             return episodes;
         }
 
-        public string Description(string e)
+        public string Description(XmlDocument e)
         {
             
-            var tit = FeedName();
-            var xml = "";
-            using (var client = new System.Net.WebClient())
-            {
-                client.Encoding = Encoding.UTF8;
-                xml = client.DownloadString(e);
-            }
-
-            //Skapa en objektrepresentation.
-            var dom = new System.Xml.XmlDocument();
-            dom.LoadXml(xml);
-
+            var tit = FeedName(e);
             XmlNode nodeList;
-            XmlNode root = dom.DocumentElement;
+            XmlNode root = e.DocumentElement;
 
             nodeList = root.SelectSingleNode("descendant::item[title='" + tit + "']/description");
             var descrition = nodeList.InnerText;
@@ -70,7 +60,7 @@ namespace ClassLibrary1
 
 
         }
-        */
+        
     }
 }
 
