@@ -18,11 +18,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void OKbtn_Click(object sender, EventArgs e)
         {
             string category = textBox1.Text;

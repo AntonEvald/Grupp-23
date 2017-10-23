@@ -33,6 +33,7 @@
             this.categoryCombo = new System.Windows.Forms.ComboBox();
             this.removeBtn = new System.Windows.Forms.Button();
             this.changeCatBtn = new System.Windows.Forms.Button();
+            this.feedsBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -55,7 +56,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(671, 593);
             this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // categoryCombo
             // 
@@ -70,7 +70,6 @@
             this.categoryCombo.Name = "categoryCombo";
             this.categoryCombo.Size = new System.Drawing.Size(380, 39);
             this.categoryCombo.TabIndex = 3;
-            this.categoryCombo.SelectedIndexChanged += new System.EventHandler(this.categoryCombo_SelectedIndexChanged);
             this.categoryCombo.Click += new System.EventHandler(this.categoryCombo_Click);
             // 
             // removeBtn
@@ -93,12 +92,23 @@
             this.changeCatBtn.UseVisualStyleBackColor = true;
             this.changeCatBtn.Click += new System.EventHandler(this.changeCatBtn_Click);
             // 
+            // feedsBtn
+            // 
+            this.feedsBtn.Location = new System.Drawing.Point(1160, 409);
+            this.feedsBtn.Name = "feedsBtn";
+            this.feedsBtn.Size = new System.Drawing.Size(277, 64);
+            this.feedsBtn.TabIndex = 6;
+            this.feedsBtn.Text = "Modify Feeds";
+            this.feedsBtn.UseVisualStyleBackColor = true;
+            this.feedsBtn.Click += new System.EventHandler(this.feedsBtn_Click);
+            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1888, 992);
+            this.Controls.Add(this.feedsBtn);
             this.Controls.Add(this.changeCatBtn);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.categoryCombo);
@@ -120,6 +130,7 @@
         private System.Windows.Forms.ComboBox categoryCombo;
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Button changeCatBtn;
+        private System.Windows.Forms.Button feedsBtn;
     }
 }
 

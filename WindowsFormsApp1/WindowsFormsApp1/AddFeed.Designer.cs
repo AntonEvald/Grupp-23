@@ -31,9 +31,9 @@
             this.urlTB = new System.Windows.Forms.TextBox();
             this.urlLabel = new System.Windows.Forms.Label();
             this.addFeedBtn = new System.Windows.Forms.Button();
-            this.addFeedCategoryCB = new System.Windows.Forms.ComboBox();
+            this.AddFeedCategoryCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.addCategoryBtn = new System.Windows.Forms.Button();
+            this.AddCategoryBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // urlTB
@@ -63,16 +63,17 @@
             this.addFeedBtn.TabIndex = 2;
             this.addFeedBtn.Text = "Add Feed";
             this.addFeedBtn.UseVisualStyleBackColor = true;
-            this.addFeedBtn.Click += new System.EventHandler(this.addFeedBtn_Click);
             // 
-            // addFeedCategoryCB
+            // AddFeedCategoryCB
             // 
-            this.addFeedCategoryCB.FormattingEnabled = true;
-            this.addFeedCategoryCB.Location = new System.Drawing.Point(32, 117);
-            this.addFeedCategoryCB.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.addFeedCategoryCB.Name = "addFeedCategoryCB";
-            this.addFeedCategoryCB.Size = new System.Drawing.Size(316, 39);
-            this.addFeedCategoryCB.TabIndex = 3;
+            this.AddFeedCategoryCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.AddFeedCategoryCB.FormattingEnabled = true;
+            this.AddFeedCategoryCB.Location = new System.Drawing.Point(32, 117);
+            this.AddFeedCategoryCB.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.AddFeedCategoryCB.Name = "AddFeedCategoryCB";
+            this.AddFeedCategoryCB.Size = new System.Drawing.Size(316, 39);
+            this.AddFeedCategoryCB.TabIndex = 3;
+            this.AddFeedCategoryCB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.AddFeedCategoryCB_MouseClick);
             // 
             // label1
             // 
@@ -84,31 +85,30 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Category";
             // 
-            // addCategoryBtn
+            // AddCategoryBtn
             // 
-            this.addCategoryBtn.Location = new System.Drawing.Point(680, 101);
-            this.addCategoryBtn.Name = "addCategoryBtn";
-            this.addCategoryBtn.Size = new System.Drawing.Size(244, 55);
-            this.addCategoryBtn.TabIndex = 5;
-            this.addCategoryBtn.Text = "Add Category";
-            this.addCategoryBtn.UseVisualStyleBackColor = true;
-            this.addCategoryBtn.Click += new System.EventHandler(this.addCategoryBtn_Click);
+            this.AddCategoryBtn.Location = new System.Drawing.Point(680, 101);
+            this.AddCategoryBtn.Name = "AddCategoryBtn";
+            this.AddCategoryBtn.Size = new System.Drawing.Size(244, 55);
+            this.AddCategoryBtn.TabIndex = 5;
+            this.AddCategoryBtn.Text = "Add Category";
+            this.AddCategoryBtn.UseVisualStyleBackColor = true;
+            this.AddCategoryBtn.Click += new System.EventHandler(this.addCategoryBtn_Click);
             // 
             // AddFeed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1107, 551);
-            this.Controls.Add(this.addCategoryBtn);
+            this.Controls.Add(this.AddCategoryBtn);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.addFeedCategoryCB);
+            this.Controls.Add(this.AddFeedCategoryCB);
             this.Controls.Add(this.addFeedBtn);
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.urlTB);
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "AddFeed";
             this.Text = "AddFeed";
-            this.Load += new System.EventHandler(this.AddFeed_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,8 +119,8 @@
         private System.Windows.Forms.TextBox urlTB;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Button addFeedBtn;
-        private System.Windows.Forms.ComboBox addFeedCategoryCB;
+        private System.Windows.Forms.ComboBox AddFeedCategoryCB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button addCategoryBtn;
+        private System.Windows.Forms.Button AddCategoryBtn;
     }
 }
