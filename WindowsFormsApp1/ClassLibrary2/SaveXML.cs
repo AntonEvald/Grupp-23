@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 
 namespace ClassLibrary2
 {
-    class SaveXML
+     public class SaveXML
     {
         public static void SaveXMLDoc (XmlDocument x)
         {

@@ -71,5 +71,11 @@ namespace WindowsFormsApp1
             Feeds F = new Feeds();
             F.Show();
         }
+
+        private void ModifyCategoriesBtn_Click(object sender, EventArgs e)
+        {
+            MCForm mcf = new MCForm();
+            mcf.Show();
+        }
     }
 }

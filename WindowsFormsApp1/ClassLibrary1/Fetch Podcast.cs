@@ -11,23 +11,56 @@ using System.Xml;
 namespace ClassLibrary1
 {
 
+
     public class Fetch_Podcast
     {
-        public XmlDocument pod;
 
-        public bool PodcastObject(string s)
+
+        public void Podcastlink(string s)
         {
             if (Validation.IsXML(s))
             {
                 var podcastfeed = FetchXml.DownloadXml(s);
-                pod = podcastfeed;
-                return true;
-            }
-            else
-            {
-                return false;
+                var name = FeedName(podcastfeed);
+                podcastfeed.Save(@"C:\Users\MightyKong\Desktop\C sharp projekt\Xml feeds\"+name+".xml"); 
             }
         }
+
+        public string FeedName(XmlDocument e)
+        {
+            var a = e.SelectSingleNode("(//title)[1]");
+            string b = a.InnerText;
+            return b;
+        }
+
+
+        public List<String> Episodes(XmlDocument e)
+        {
+            List<string> episodes = new List<string>();
+            foreach (System.Xml.XmlNode item
+         in e.DocumentElement.SelectNodes("channel/item"))
+            {
+                //Skriv ut dess titel.
+                var title = item.SelectSingleNode("title");
+                episodes.Add(title.InnerText);
+            }
+            return episodes;
+        }
+
+        public string Description(XmlDocument e)
+        {
+            
+            var tit = FeedName(e);
+            XmlNode nodeList;
+            XmlNode root = e.DocumentElement;
+
+            nodeList = root.SelectSingleNode("descendant::item[title='" + tit + "']/description");
+            var descrition = nodeList.InnerText;
+            return descrition;
+
+
+        }
+        
     }
 }
 

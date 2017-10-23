@@ -73,6 +73,12 @@
     <Compile Include="Feeds.Designer.cs">
       <DependentUpon>Feeds.cs</DependentUpon>
     </Compile>
+    <Compile Include="MCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MCForm.Designer.cs">
+      <DependentUpon>MCForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Feeds.resx">
       <DependentUpon>Feeds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MCForm.resx">
+      <DependentUpon>MCForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
