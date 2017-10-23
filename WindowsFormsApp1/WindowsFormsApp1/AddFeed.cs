@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary1;
 
+
 namespace WindowsFormsApp1
 {
     public partial class AddFeed : Form
@@ -16,6 +17,7 @@ namespace WindowsFormsApp1
         
         public AddFeed()
         {
+           
             InitializeComponent();
             FillCombo();
         }
@@ -76,6 +78,7 @@ namespace WindowsFormsApp1
         {
             try
             {
+                Fetch_Podcast Fp = new Fetch_Podcast();
                 string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
                 string chosenUrl = urlTB.Text;
 
@@ -83,6 +86,7 @@ namespace WindowsFormsApp1
                 {
                     if (Validation.IsXML(chosenUrl) && !Validation.textEmpty(chosenUrl))
                     {
+                        Fp.Podcastlink(chosenUrl);
 
 
                     }
