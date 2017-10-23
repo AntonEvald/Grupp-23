@@ -45,18 +45,33 @@ namespace WindowsFormsApp1
         {
             
             try {
-                string? chosenCat = addFeedCategoryCB.SelectedItem.ToString();
+                var chosenCat = addFeedCategoryCB.SelectedItem;
                 string chosenUrl = urlTB.Text;
-                if (!Validation.isNull(chosenCat))
+                if (chosenCat != null )
                 {
-                   
+                    if (!Validation.textEmpty(chosenUrl) && Validation.IsXML(chosenUrl))
+                    {
+                        /*if ()
+                        {
+
+                        }*/
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Du måste ange en giltig URL");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Du måste ange en kategori");
+                    
                 }
                 
             }
             catch (Exception)
-            {
+            { 
                 throw;
-               
             }
         }
 

@@ -38,28 +38,25 @@
             // 
             // urlTB
             // 
-            this.urlTB.Location = new System.Drawing.Point(32, 281);
-            this.urlTB.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.urlTB.Location = new System.Drawing.Point(12, 100);
             this.urlTB.Name = "urlTB";
-            this.urlTB.Size = new System.Drawing.Size(561, 38);
+            this.urlTB.Size = new System.Drawing.Size(213, 20);
             this.urlTB.TabIndex = 0;
             // 
             // urlLabel
             // 
             this.urlLabel.AutoSize = true;
-            this.urlLabel.Location = new System.Drawing.Point(35, 243);
-            this.urlLabel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.urlLabel.Location = new System.Drawing.Point(9, 84);
             this.urlLabel.Name = "urlLabel";
-            this.urlLabel.Size = new System.Drawing.Size(151, 32);
+            this.urlLabel.Size = new System.Drawing.Size(59, 13);
             this.urlLabel.TabIndex = 1;
             this.urlLabel.Text = "Feed URL:";
             // 
             // addFeedBtn
             // 
-            this.addFeedBtn.Location = new System.Drawing.Point(680, 281);
-            this.addFeedBtn.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.addFeedBtn.Location = new System.Drawing.Point(255, 162);
             this.addFeedBtn.Name = "addFeedBtn";
-            this.addFeedBtn.Size = new System.Drawing.Size(245, 55);
+            this.addFeedBtn.Size = new System.Drawing.Size(92, 23);
             this.addFeedBtn.TabIndex = 2;
             this.addFeedBtn.Text = "Add Feed";
             this.addFeedBtn.UseVisualStyleBackColor = true;
@@ -68,27 +65,26 @@
             // addFeedCategoryCB
             // 
             this.addFeedCategoryCB.FormattingEnabled = true;
-            this.addFeedCategoryCB.Location = new System.Drawing.Point(32, 117);
-            this.addFeedCategoryCB.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.addFeedCategoryCB.Location = new System.Drawing.Point(12, 49);
             this.addFeedCategoryCB.Name = "addFeedCategoryCB";
-            this.addFeedCategoryCB.Size = new System.Drawing.Size(316, 39);
+            this.addFeedCategoryCB.Size = new System.Drawing.Size(121, 21);
             this.addFeedCategoryCB.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 79);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label1.Location = new System.Drawing.Point(9, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 32);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Category";
             // 
             // addCategoryBtn
             // 
-            this.addCategoryBtn.Location = new System.Drawing.Point(680, 101);
+            this.addCategoryBtn.Location = new System.Drawing.Point(255, 42);
+            this.addCategoryBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.addCategoryBtn.Name = "addCategoryBtn";
-            this.addCategoryBtn.Size = new System.Drawing.Size(244, 55);
+            this.addCategoryBtn.Size = new System.Drawing.Size(92, 23);
             this.addCategoryBtn.TabIndex = 5;
             this.addCategoryBtn.Text = "Add Category";
             this.addCategoryBtn.UseVisualStyleBackColor = true;
@@ -96,16 +92,15 @@
             // 
             // AddFeed
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 551);
+            this.ClientSize = new System.Drawing.Size(415, 231);
             this.Controls.Add(this.addCategoryBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addFeedCategoryCB);
             this.Controls.Add(this.addFeedBtn);
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.urlTB);
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "AddFeed";
             this.Text = "AddFeed";
             this.Load += new System.EventHandler(this.AddFeed_Load);
