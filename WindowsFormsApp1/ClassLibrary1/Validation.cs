@@ -35,6 +35,24 @@ namespace ClassLibrary1
             }
         }
 
+        public static bool IsNewCat(string c)
+        {
+            foreach (string category in ModifyCategories.Categories)
+            {
+                if (c.Equals(category, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    return false;
+                }
+            }
+            if (c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         public static bool IsXML(string s)
         {

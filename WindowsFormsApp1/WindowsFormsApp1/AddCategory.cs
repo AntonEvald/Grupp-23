@@ -26,27 +26,24 @@ namespace WindowsFormsApp1
         private void OKbtn_Click(object sender, EventArgs e)
         {
             string category = textBox1.Text;
-            try
+            if (Validation.textEmpty(category))
             {
-                if (ModifyCategories.validateNewCat(category) is true)
+                MessageBox.Show("Ange en kategori att lägga till!");
+            }
+            else
+            {
+                if (Validation.IsNewCat(category))
                 {
+                    Validation.IsNewCat(category);
                     ModifyCategories.AddCategory(category);
-                    MessageBox.Show("Tillagt");
+                    MessageBox.Show("Kategorin: " + category + " har lagts till!");
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show("Ej giltig");
+                    MessageBox.Show("Denna kategori finns redan!");
                 }
             }
-            catch (Exception)
-            {
-                
-                throw;
-            }
-        
-           
-            
         }
     }
 }

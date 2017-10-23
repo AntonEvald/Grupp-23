@@ -59,5 +59,11 @@ namespace WindowsFormsApp1
                
             }
         }
+
+        private void addCategoryBtn_Click(object sender, EventArgs e)
+        {
+            AddCategory ac = new AddCategory();
+            ac.Show();
+        }
     }
 }
