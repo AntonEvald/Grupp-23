@@ -23,7 +23,7 @@ namespace ClassLibrary1
             }
         }
 
-        public static bool validateNewCat(string c)
+        public static bool IsNewCat(string c)
         {
             foreach (string category in ModifyCategories.Categories)
             {
@@ -32,7 +32,7 @@ namespace ClassLibrary1
                     return false;
                 }
             }
-            if (Validation.textEmpty(c) || c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
+            if (c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
             {
                 return false;
             }

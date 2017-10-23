@@ -27,7 +27,7 @@ namespace ClassLibrary1
         {
             try
             {
-                if (validateNewCat(c))
+                if (Validation.IsNewCat(c))
                 {
                     Categories.Add(c);
                 }
