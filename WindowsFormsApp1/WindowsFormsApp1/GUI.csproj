@@ -79,6 +79,12 @@
     <Compile Include="MCForm.Designer.cs">
       <DependentUpon>MCForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RemoveFeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemoveFeed.Designer.cs">
+      <DependentUpon>RemoveFeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MCForm.resx">
       <DependentUpon>MCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RemoveFeed.resx">
+      <DependentUpon>RemoveFeed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>

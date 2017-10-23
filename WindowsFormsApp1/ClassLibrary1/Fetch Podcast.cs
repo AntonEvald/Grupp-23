@@ -22,7 +22,7 @@ namespace ClassLibrary1
             {
                 var podcastfeed = FetchXml.DownloadXml(s);
                 var name = FeedName(podcastfeed);
-                podcastfeed.Save(@"C:\Users\MightyKong\Desktop\C sharp projekt\Xml feeds\"+name+".xml"); 
+                podcastfeed.Save(@"..\..\"+name+".xml"); 
             }
         }
 

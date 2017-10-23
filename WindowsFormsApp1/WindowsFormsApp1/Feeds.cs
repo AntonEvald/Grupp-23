@@ -22,5 +22,11 @@ namespace WindowsFormsApp1
             AddFeed AF = new AddFeed();
             AF.Show();
         }
+
+        private void removeFeedBtn_Click(object sender, EventArgs e)
+        {
+            RemoveFeed rf = new RemoveFeed;
+            rf.Show();
+        }
     }
 }
