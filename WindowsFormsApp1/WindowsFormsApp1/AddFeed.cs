@@ -34,23 +34,24 @@ namespace WindowsFormsApp1
         private void AddFeedBtn_Click(object sender, EventArgs e)
         {
             try {
-                string chosenCat = AddFeedCategoryCB.SelectedItem.ToString();
+                string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
                 string chosenUrl = urlTB.Text;
-                if (!Validation.textEmpty(chosenCat))
+                if (Validation.textEmpty(chosenCat))
                 {
-                    if (Validation.IsXML(chosenUrl))
+                    MessageBox.Show("Du måste ange en kategori");
+                }
+                else
+                {
+                    MessageBox.Show("Du måste ange en kategori");
+                    if (Validation.IsXML(chosenUrl) && !Validation.textEmpty(chosenUrl))
                     {
-                        Fetch_Podcast podcast = new Fetch_Podcast();
-                        podcast.Podcastlink(chosenUrl);
+
+
                     }
                     else
                     {
                         MessageBox.Show("Du måste ange en giltig url");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Du måste ange en kategori");
                 }
             }
             catch (Exception)
@@ -69,6 +70,38 @@ namespace WindowsFormsApp1
         private void AddFeedCategoryCB_MouseClick(object sender, MouseEventArgs e)
         {
             FillCombo();
+        }
+
+        private void addFeedBtn_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
+                string chosenUrl = urlTB.Text;
+
+                if (!Validation.textEmpty(chosenCat))
+                {
+                    if (Validation.IsXML(chosenUrl) && !Validation.textEmpty(chosenUrl))
+                    {
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Du måste ange en giltig url");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Du måste ange en kategori");
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
