@@ -82,6 +82,7 @@
             this.Controls.Add(this.changeCombo);
             this.Name = "ChangeCategory";
             this.Text = "ChangeCategory";
+            this.Load += new System.EventHandler(this.ChangeCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

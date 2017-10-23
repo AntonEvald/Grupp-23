@@ -17,34 +17,24 @@ namespace WindowsFormsApp1
         public AddFeed()
         {
             InitializeComponent();
-            fillCombo();
+            FillCombo();
         }
 
-        private void AddFeed_Load(object sender, EventArgs e)
-        {
-            ModifyCategories.GetCategories();
-            fillCombo();
-        }
-        public void fillCombo()
+        public void FillCombo()
         {
             List<string> list = ModifyCategories.Categories;
-            addFeedCategoryCB.Items.Clear();
+            AddFeedCategoryCB.Items.Clear();
             for (int i = 0; i < list.Count; i++)
             {
                 string category = list[i];
-                addFeedCategoryCB.Items.Add(category);
+                AddFeedCategoryCB.Items.Add(category);
             }
         }
-       
-        private void addFeedCategoryCB_Click(object sender, EventArgs e)
-        {
-            fillCombo();
-        }
 
-        private void addFeedBtn_Click(object sender, EventArgs e)
+        private void AddFeedBtn_Click(object sender, EventArgs e)
         {
             try {
-                string chosenCat = addFeedCategoryCB.SelectedItem.ToString();
+                string chosenCat = AddFeedCategoryCB.SelectedItem.ToString();
                 string chosenUrl = urlTB.Text;
                 if (!Validation.textEmpty(chosenCat))
                 {
@@ -68,6 +58,17 @@ namespace WindowsFormsApp1
                
                 throw;
             }
+        }
+
+        private void addCategoryBtn_Click(object sender, EventArgs e)
+        {
+            AddCategory ac = new AddCategory();
+            ac.Show();
+        }
+
+        private void AddFeedCategoryCB_MouseClick(object sender, MouseEventArgs e)
+        {
+            FillCombo();
         }
     }
 }

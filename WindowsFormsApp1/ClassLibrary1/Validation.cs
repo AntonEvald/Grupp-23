@@ -22,8 +22,20 @@ namespace ClassLibrary1
                 return false;
             }
         }
+        public static bool isNull(string s)
+        {
+            if(s == null)
+            {
+                return true;
 
-        public static bool validateNewCat(string c)
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool IsNewCat(string c)
         {
             foreach (string category in ModifyCategories.Categories)
             {
@@ -32,7 +44,7 @@ namespace ClassLibrary1
                     return false;
                 }
             }
-            if (Validation.textEmpty(c) || c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
+            if (c.Equals("All", StringComparison.InvariantCultureIgnoreCase))
             {
                 return false;
             }
