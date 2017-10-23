@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoadXml.cs" />
     <Compile Include="SaveXML.cs" />
     <Compile Include="FetchXml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -50,7 +50,8 @@ namespace WindowsFormsApp1
                 {
                     if (Validation.IsXML(chosenUrl))
                     {
-
+                        Fetch_Podcast podcast = new Fetch_Podcast();
+                        podcast.Podcastlink(chosenUrl);
                     }
                     else
                     {

@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Serialization;
 
 namespace ClassLibrary2
 {
-     public class SaveXML
+    public class LoadXml
     {
-        public static void SaveXMLDoc (XmlDocument x)
+        public XmlDocument ReadXml(string s)
         {
-            x.Save(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            XmlDocument doc = new XmlDocument();
+            doc.Load(s);
+            return doc;
         }
+        
     }
 }

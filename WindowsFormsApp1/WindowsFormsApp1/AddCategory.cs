@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
             string category = textBox1.Text;
             try
             {
-                if (ModifyCategories.validateNewCat(category) is true)
+                if (Validation.validateNewCat(category) is true)
                 {
                     ModifyCategories.AddCategory(category);
                     MessageBox.Show("Tillagt");

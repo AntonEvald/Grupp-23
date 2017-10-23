@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         {
             string category = changeCombo.GetItemText(this.changeCombo.SelectedItem);
             string newCategory = ChangeToField.Text;
-            if(category != "" && ModifyCategories.validateNewCat(newCategory))
+            if(category != "" && Validation.validateNewCat(newCategory))
             {
                 ModifyCategories.RemoveCategory(category);
                 ModifyCategories.AddCategory(newCategory);
