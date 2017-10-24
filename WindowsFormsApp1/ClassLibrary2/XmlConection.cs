@@ -40,13 +40,11 @@ namespace ClassLibrary2
                 feeds.Add(new XElement("Feed",
                     new XElement("Title", title),
                     new XElement("URL", url),
-                    new XElement("Category", cat)));
+                    new XElement("Category", cat)
+                    //new xElement("Interval", interval)
+                    ));
                 xdoc.Save("xml.xml");
-
             }
-            
-
-
         }
     }
 }
