@@ -9,7 +9,12 @@ namespace ClassLibrary1
 {
     class PodcastNames
     {
-
+        public List <string> listAllPodcast()
+        {
+            List<string> podcastNames = new List<string>;
+            //Hämta ut alla titles från xml här och lägg i listan.
+            return podcastNames;
+        }
         
 
     }
