@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-
+using System.IO;
+using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace ClassLibrary2
 {
@@ -12,23 +13,38 @@ namespace ClassLibrary2
     {
         public void writeToXml(string title, string url, string cat)
         {
-
-            XmlWriterSettings settings = new XmlWriterSettings();
-            settings.Indent = true;
-            settings.IndentChars = ("    ");
-
-            using (XmlWriter writer = XmlWriter.Create("xml.xml", settings))
+            if (File.Exists("xml.xml") == false)
             {
-                writer.WriteStartElement("Feed");
-                writer.WriteElementString("Title", title);
-                writer.WriteElementString("URL", url);
-                writer.WriteElementString("Category", cat);
-                //writer.WriteElementString("Interval", interval);
-                writer.WriteEndElement();
+                XmlWriterSettings settings = new XmlWriterSettings();
+                settings.Indent = true;
+                settings.IndentChars = ("    ");
 
-
+                using (XmlWriter writer = XmlWriter.Create("xml.xml", settings))
+                {
+                    writer.WriteStartElement("Feeds");
+                    writer.WriteStartElement("Feed");
+                    writer.WriteElementString("Title", title);
+                    writer.WriteElementString("URL", url);
+                    writer.WriteElementString("Category", cat);
+                    //writer.WriteElementString("Interval", interval);
+                    writer.WriteEndElement();
+                    writer.WriteEndDocument();
+                    writer.Flush();
+                    writer.Close();
+                }
+            }
+            else
+            {
+                XDocument xdoc = XDocument.Load("xml.xml");
+                XElement feeds = xdoc.Element("Feeds");
+                feeds.Add(new XElement("Feed",
+                    new XElement("Title", title),
+                    new XElement("URL", url),
+                    new XElement("Category", cat)));
+                xdoc.Save("xml.xml");
 
             }
+            
 
 
         }
