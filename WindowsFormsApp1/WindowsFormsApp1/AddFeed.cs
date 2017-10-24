@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
 
                 if (!Validation.textEmpty(chosenCat))
                 {
-                    if (Validation.IsXML(chosenUrl) && !Validation.textEmpty(chosenUrl))
+                    if (!Validation.textEmpty(chosenUrl))
                     {
                         Fp.Podcastlink(chosenUrl,chosenCat);
 
@@ -104,7 +104,6 @@ namespace WindowsFormsApp1
             catch (Exception)
             {
 
-                throw;
             }
         }
     }
