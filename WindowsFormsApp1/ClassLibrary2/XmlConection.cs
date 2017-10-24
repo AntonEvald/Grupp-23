@@ -10,18 +10,26 @@ namespace ClassLibrary2
 {
     class XmlConection
     {
-        public void writeToXml()
+        public void writeToXml(string title, string url, string cat, string interval)
         {
+            
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.IndentChars = ("    ");
 
             using (XmlWriter writer = XmlWriter.Create("xml.xml", settings))
             {
-                writer.WriteElementString("Title",);
+                writer.WriteStartElement("Feed");
+                writer.WriteElementString("Title", title);
+                writer.WriteElementString("URL", url);
+                writer.WriteElementString("Category", cat);
+                writer.WriteElementString("Interval", interval);
+                writer.WriteEndElement();
+               
 
 
             }
+        public void xml
         }
 
     }
