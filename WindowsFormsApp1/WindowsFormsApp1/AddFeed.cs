@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
                 {
                     if (Validation.IsXML(chosenUrl) && !Validation.textEmpty(chosenUrl))
                     {
-                        Fp.Podcastlink(chosenUrl);
+                        Fp.Podcastlink(chosenUrl,chosenCat);
 
 
                     }

@@ -8,11 +8,11 @@ using System.Xml;
 
 namespace ClassLibrary2
 {
-    class XmlConection
+    public class XmlConection
     {
-        public void writeToXml(string title, string url, string cat, string interval)
+        public void writeToXml(string title, string url, string cat)
         {
-            
+
             XmlWriterSettings settings = new XmlWriterSettings();
             settings.Indent = true;
             settings.IndentChars = ("    ");
@@ -23,14 +23,14 @@ namespace ClassLibrary2
                 writer.WriteElementString("Title", title);
                 writer.WriteElementString("URL", url);
                 writer.WriteElementString("Category", cat);
-                writer.WriteElementString("Interval", interval);
+                //writer.WriteElementString("Interval", interval);
                 writer.WriteEndElement();
-               
+
 
 
             }
-        public void xml
-        }
 
+
+        }
     }
 }
