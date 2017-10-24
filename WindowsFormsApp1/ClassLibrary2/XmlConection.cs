@@ -18,7 +18,7 @@ namespace ClassLibrary2
 
             using (XmlWriter writer = XmlWriter.Create("xml.xml", settings))
             {
-                writer.WriteElementString("Title",);
+                //writer.WriteElementString("Title",);
 
 
             }

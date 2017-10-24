@@ -67,6 +67,12 @@
     <Compile Include="ChangeCategory.Designer.cs">
       <DependentUpon>ChangeCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeFeed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeFeed.Designer.cs">
+      <DependentUpon>ChangeFeed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feeds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeCategory.resx">
       <DependentUpon>ChangeCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeFeed.resx">
+      <DependentUpon>ChangeFeed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feeds.resx">
       <DependentUpon>Feeds.cs</DependentUpon>

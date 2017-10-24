@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class RemoveFeed : Form
+    public partial class ChangeFeed : Form
     {
-        public RemoveFeed()
+        public ChangeFeed()
         {
             InitializeComponent();
-        }
-
-        private void RemoveBtn_Click(object sender, EventArgs e)
-        {
-            String feed = removeCombo.GetItemText(this.removeCombo.SelectedIndex);
         }
     }
 }
