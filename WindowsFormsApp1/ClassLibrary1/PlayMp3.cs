@@ -11,7 +11,7 @@ namespace ClassLibrary1
 
         public void PlayMp3File(string s)
         {
-            System.Diagnostics.Process.Start(@"C:\Users\MightyKong\Desktop\C sharp projekt\mp3"+s+".mp3");
+            System.Diagnostics.Process.Start(@@"..\Mp3\"+s+".mp3");
         }
 
     }

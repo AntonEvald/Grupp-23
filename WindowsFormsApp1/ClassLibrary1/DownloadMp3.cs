@@ -24,7 +24,7 @@ namespace ClassLibrary1
             var link = nodeList.InnerText;
             WebClient client = new WebClient();
             var folder = CreateFolders.CreateMp3Folder();
-            client.DownloadFileAsync(new Uri(link), folder+f+".mp3");
+            client.DownloadFileAsync(new Uri(link), folder+@"\"+f+".mp3");
 
 
 

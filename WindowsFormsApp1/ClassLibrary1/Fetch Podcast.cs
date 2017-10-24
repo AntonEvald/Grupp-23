@@ -24,7 +24,7 @@ namespace ClassLibrary1
                 var podcastfeed = FetchXml.DownloadXml(Url);
                 var name = FeedName(podcastfeed);
                 var folder = CreateFolders.CreateXmlFolder();
-                podcastfeed.Save(folder+name+".xml");
+                podcastfeed.Save(folder+@"\"+name+".xml");
                 xmlConection.writeToXml(name,Url,cat);
             }
         }
