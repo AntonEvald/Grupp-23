@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
 
 namespace ClassLibrary1
 {
-    public class Feeds
+    public class PlayMp3
     {
 
-        //XmlDocument f;
-
-
-        public void GetXml()
+        public void PlayMp3File(string s)
         {
-
-
+            System.Diagnostics.Process.Start(@"C:\Users\MightyKong\Desktop\C sharp projekt\mp3"+s+".mp3");
         }
 
     }

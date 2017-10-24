@@ -16,13 +16,15 @@ namespace ClassLibrary1
     {
 
 
-        public void Podcastlink(string s)
+        public void Podcastlink(string Url,string cat, string interval)
         {
-            if (Validation.IsXML(s))
+
+            if (Validation.IsXML(Url))
             {
-                var podcastfeed = FetchXml.DownloadXml(s);
+                var podcastfeed = FetchXml.DownloadXml(Url);
                 var name = FeedName(podcastfeed);
                 podcastfeed.Save(@"..\..\"+name+".xml"); 
+
             }
         }
 

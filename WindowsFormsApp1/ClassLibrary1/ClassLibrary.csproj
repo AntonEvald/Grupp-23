@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DownloadMp3.cs" />
-    <Compile Include="Feeds.cs" />
+    <Compile Include="PlayMp3.cs" />
     <Compile Include="PodcastNames.cs" />
     <Compile Include="ModifyCategories.cs" />
     <Compile Include="Fetch Podcast.cs" />
