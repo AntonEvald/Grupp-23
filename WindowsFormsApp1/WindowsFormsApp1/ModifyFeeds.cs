@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Feeds : Form
+    public partial class ModifyFeeds : Form
     {
-        public Feeds()
+        public ModifyFeeds()
         {
             InitializeComponent();
         }
@@ -27,6 +27,12 @@ namespace WindowsFormsApp1
         {
             RemoveFeed rf = new RemoveFeed();
             rf.Show();
+        }
+
+        private void alterFeed_Click(object sender, EventArgs e)
+        {
+            ChangeFeed cf = new ChangeFeed();
+            cf.Show();
         }
     }
 }

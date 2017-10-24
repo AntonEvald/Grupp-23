@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
 
         private void feedsBtn_Click(object sender, EventArgs e)
         {
-            Feeds F = new Feeds();
+            ModifyFeeds F = new ModifyFeeds();
             F.Show();
         }
 
