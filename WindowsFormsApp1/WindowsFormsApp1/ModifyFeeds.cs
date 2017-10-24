@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Feeds : Form
+    public partial class ModifyFeeds : Form
     {
-        public Feeds()
+        public ModifyFeeds()
         {
             InitializeComponent();
         }

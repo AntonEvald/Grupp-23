@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Feeds
+    partial class ModifyFeeds
     {
         /// <summary>
         /// Required designer variable.
