@@ -81,12 +81,13 @@ namespace WindowsFormsApp1
                 Fetch_Podcast Fp = new Fetch_Podcast();
                 string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
                 string chosenUrl = urlTB.Text;
+                string chosenInt = IntervallCb.GetItemText(this.IntervallCb.SelectedItem);
 
                 if (!Validation.textEmpty(chosenCat))
                 {
                     if (!Validation.textEmpty(chosenUrl))
                     {
-                        Fp.Podcastlink(chosenUrl,chosenCat);
+                        Fp.Podcastlink(chosenUrl, chosenCat, chosenInt);
 
 
                     }

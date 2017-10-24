@@ -11,7 +11,7 @@ namespace ClassLibrary2
 {
     public class XmlConection
     {
-        public void writeToXml(string title, string url, string cat)
+        public void writeToXml(string title, string url, string cat, string interval)
         {
             if (File.Exists("xml.xml") == false)
             {
@@ -26,7 +26,7 @@ namespace ClassLibrary2
                     writer.WriteElementString("Title", title);
                     writer.WriteElementString("URL", url);
                     writer.WriteElementString("Category", cat);
-                    //writer.WriteElementString("Interval", interval);
+                    writer.WriteElementString("Interval", interval);
                     writer.WriteEndElement();
                     writer.WriteEndDocument();
                     writer.Flush();
@@ -40,9 +40,8 @@ namespace ClassLibrary2
                 feeds.Add(new XElement("Feed",
                     new XElement("Title", title),
                     new XElement("URL", url),
-                    new XElement("Category", cat)
-                    //new xElement("Interval", interval)
-                    ));
+                    new XElement("Category", cat),
+                    new XElement("Interval", interval)));
                 xdoc.Save("xml.xml");
             }
         }
