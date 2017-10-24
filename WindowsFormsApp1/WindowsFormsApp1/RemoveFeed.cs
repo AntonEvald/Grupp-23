@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
             String feed = removeCombo.GetItemText(this.removeCombo.SelectedIndex);
-            Feeds.RemoveFeed(feed);
+           /* Feeds.RemoveFeed(feed);*/
         }
     }
 }
