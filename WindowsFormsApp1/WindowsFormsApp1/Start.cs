@@ -64,6 +64,8 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             ModifyCategories.GetCategories();
+            PodcastNames.getPodcastsFromXML();
+            listBox1.DataSource = PodcastNames.podcastsList;
         }
 
         private void feedsBtn_Click(object sender, EventArgs e)
