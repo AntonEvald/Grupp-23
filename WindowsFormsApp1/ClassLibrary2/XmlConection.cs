@@ -17,7 +17,7 @@ namespace ClassLibrary2
             settings.Indent = true;
             settings.IndentChars = ("    ");
 
-            using (XmlWriter writer = XmlWriter.Create("xml.xml", settings))
+            using (XmlWriter writer = XmlWriter.Create(@"..\..\xml.xml", settings))
             {
                 writer.WriteStartElement("Feed");
                 writer.WriteElementString("Title", title);
@@ -25,9 +25,6 @@ namespace ClassLibrary2
                 writer.WriteElementString("Category", cat);
                 //writer.WriteElementString("Interval", interval);
                 writer.WriteEndElement();
-
-
-
             }
 
 
