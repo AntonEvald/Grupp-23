@@ -23,7 +23,8 @@ namespace ClassLibrary1
             nodeList = root.SelectSingleNode("descendant::item[title='" + f + "']/link");
             var link = nodeList.InnerText;
             WebClient client = new WebClient();
-            client.DownloadFileAsync(new Uri(link), @"C:\Users\MightyKong\Desktop\C sharp projekt\mp3\"+f+".mp3");
+            var folder = CreateFolders.CreateMp3Folder();
+            client.DownloadFileAsync(new Uri(link), folder+f+".mp3");
 
 
 
