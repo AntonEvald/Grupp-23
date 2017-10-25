@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompareXml.cs" />
     <Compile Include="createFolders.cs" />
     <Compile Include="DownloadMp3.cs" />
     <Compile Include="PlayMp3.cs" />

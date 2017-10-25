@@ -20,14 +20,11 @@ namespace ClassLibrary1
             XmlNode nodeList;
             XmlNode root = xmldoc.DocumentElement;
 
-            nodeList = root.SelectSingleNode("descendant::item[title='" + f + "']/link");
+            nodeList = root.SelectSingleNode("descendant::item[title='" + f + "']/enclosure/@url");
             var link = nodeList.InnerText;
             WebClient client = new WebClient();
             var folder = CreateFolders.CreateMp3Folder();
             client.DownloadFileAsync(new Uri(link), folder+@"\"+f+".mp3");
-
-
-
         }
 
     }

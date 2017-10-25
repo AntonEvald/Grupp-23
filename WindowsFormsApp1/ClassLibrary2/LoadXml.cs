@@ -12,7 +12,7 @@ namespace ClassLibrary2
         public XmlDocument ReadXml(string s)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"C:\Users\MightyKong\Desktop\C sharp projekt\Xml feeds\"+s+".xml");
+            doc.Load(@"..\XmlFeeds\" + s + ".xml");
             return doc;
         }
         
