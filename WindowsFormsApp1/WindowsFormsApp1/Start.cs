@@ -13,11 +13,13 @@ namespace WindowsFormsApp1
 {
     public partial class Start : Form
     {
-       
+
+        CompareXml CompareXml = new CompareXml();
         public Start()
         {
             InitializeComponent();
             fillCombo();
+          CompareXml.Comapare("The Joe Rogan Experience");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -65,19 +67,24 @@ namespace WindowsFormsApp1
         {
             ModifyCategories.GetCategories();
             //PodcastNames.getPodcastsFromXML();
-            listBox1.DataSource = PodcastNames.podcastsList;
+            //listBox1.DataSource = PodcastNames.podcastsList;
         }
 
         private void feedsBtn_Click(object sender, EventArgs e)
         {
             ModifyFeeds F = new ModifyFeeds();
-            F.Show();
+            F.Show();   
         }
 
         private void ModifyCategoriesBtn_Click(object sender, EventArgs e)
         {
             MCForm mcf = new MCForm();
             mcf.Show();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

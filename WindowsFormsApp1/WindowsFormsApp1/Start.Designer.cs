@@ -38,10 +38,11 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(4, 9);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(1);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(254, 251);
             this.listBox1.TabIndex = 1;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // categoryCombo
             // 
@@ -51,7 +52,7 @@
             this.categoryCombo.Items.AddRange(new object[] {
             "All"});
             this.categoryCombo.Location = new System.Drawing.Point(276, 18);
-            this.categoryCombo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.categoryCombo.Margin = new System.Windows.Forms.Padding(1);
             this.categoryCombo.MaxDropDownItems = 10;
             this.categoryCombo.Name = "categoryCombo";
             this.categoryCombo.Size = new System.Drawing.Size(145, 21);
@@ -61,7 +62,7 @@
             // feedsBtn
             // 
             this.feedsBtn.Location = new System.Drawing.Point(547, 213);
-            this.feedsBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.feedsBtn.Margin = new System.Windows.Forms.Padding(1);
             this.feedsBtn.Name = "feedsBtn";
             this.feedsBtn.Size = new System.Drawing.Size(120, 29);
             this.feedsBtn.TabIndex = 6;
@@ -72,7 +73,7 @@
             // ModifyCategoriesBtn
             // 
             this.ModifyCategoriesBtn.Location = new System.Drawing.Point(547, 263);
-            this.ModifyCategoriesBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ModifyCategoriesBtn.Margin = new System.Windows.Forms.Padding(1);
             this.ModifyCategoriesBtn.Name = "ModifyCategoriesBtn";
             this.ModifyCategoriesBtn.Size = new System.Drawing.Size(120, 29);
             this.ModifyCategoriesBtn.TabIndex = 7;
@@ -90,7 +91,7 @@
             this.Controls.Add(this.feedsBtn);
             this.Controls.Add(this.categoryCombo);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "Start";
             this.Text = "Podcast player";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);

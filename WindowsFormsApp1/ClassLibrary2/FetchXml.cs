@@ -12,7 +12,7 @@ namespace ClassLibrary2
     public class FetchXml
     {
 
-        public static XmlDocument DownloadXml(string s)
+        public  XmlDocument DownloadXml(string s)
         {
            
             //Ladda hem XML.
