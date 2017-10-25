@@ -71,7 +71,7 @@
             // 
             // ModifyCategoriesBtn
             // 
-            this.ModifyCategoriesBtn.Location = new System.Drawing.Point(526, 257);
+            this.ModifyCategoriesBtn.Location = new System.Drawing.Point(547, 263);
             this.ModifyCategoriesBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ModifyCategoriesBtn.Name = "ModifyCategoriesBtn";
             this.ModifyCategoriesBtn.Size = new System.Drawing.Size(120, 29);

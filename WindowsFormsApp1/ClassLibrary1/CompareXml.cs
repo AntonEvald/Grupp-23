@@ -25,11 +25,14 @@ namespace ClassLibrary1
             nodeList = root.SelectSingleNode("descendant::Feed[title='" + e + "']/URL");
             var a = nodeList.InnerText;
             var b = FetchXml.DownloadXml(a);
-
             var c = load.ReadXml(e);
+            int old = c.GetElementsByTagName("Item").Count;
+            int rss = b.GetElementsByTagName("Item").Count;
 
-            int old = c.DocumentElement.
-            
+            if(old < rss)
+            {
+                b.Save(@"..\XmlFeeds\"+e+".xml");
+            }
         }
 
     }
