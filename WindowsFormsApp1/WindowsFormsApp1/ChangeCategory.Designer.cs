@@ -38,17 +38,19 @@
             // 
             this.changeCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.changeCombo.FormattingEnabled = true;
-            this.changeCombo.Location = new System.Drawing.Point(165, 100);
+            this.changeCombo.Location = new System.Drawing.Point(62, 42);
+            this.changeCombo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.changeCombo.Name = "changeCombo";
-            this.changeCombo.Size = new System.Drawing.Size(337, 39);
+            this.changeCombo.Size = new System.Drawing.Size(129, 21);
             this.changeCombo.TabIndex = 0;
             this.changeCombo.SelectedIndexChanged += new System.EventHandler(this.changeCombo_SelectedIndexChanged);
             // 
             // changeBtn
             // 
-            this.changeBtn.Location = new System.Drawing.Point(693, 312);
+            this.changeBtn.Location = new System.Drawing.Point(260, 131);
+            this.changeBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.changeBtn.Name = "changeBtn";
-            this.changeBtn.Size = new System.Drawing.Size(203, 65);
+            this.changeBtn.Size = new System.Drawing.Size(76, 27);
             this.changeBtn.TabIndex = 1;
             this.changeBtn.Text = "Change";
             this.changeBtn.UseVisualStyleBackColor = true;
@@ -57,31 +59,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 258);
+            this.label1.Location = new System.Drawing.Point(66, 108);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(154, 32);
+            this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Change to:";
             // 
             // ChangeToField
             // 
-            this.ChangeToField.Location = new System.Drawing.Point(165, 324);
+            this.ChangeToField.Location = new System.Drawing.Point(62, 136);
+            this.ChangeToField.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ChangeToField.Name = "ChangeToField";
-            this.ChangeToField.Size = new System.Drawing.Size(337, 38);
+            this.ChangeToField.Size = new System.Drawing.Size(129, 20);
             this.ChangeToField.TabIndex = 3;
             this.ChangeToField.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ChangeCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 578);
+            this.ClientSize = new System.Drawing.Size(380, 242);
             this.Controls.Add(this.ChangeToField);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.changeBtn);
             this.Controls.Add(this.changeCombo);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "ChangeCategory";
             this.Text = "ChangeCategory";
+            this.Load += new System.EventHandler(this.ChangeCategory_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

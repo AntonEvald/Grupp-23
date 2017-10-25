@@ -65,5 +65,10 @@ namespace WindowsFormsApp1
             string item = changeCombo.GetItemText(this.changeCombo.SelectedItem);
             ChangeToField.Text = item;
         }
+
+        private void ChangeCategory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

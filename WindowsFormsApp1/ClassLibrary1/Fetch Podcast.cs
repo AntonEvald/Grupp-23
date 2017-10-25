@@ -23,7 +23,7 @@ namespace ClassLibrary1
                 var name = FeedName(podcastfeed);
                 var folder = CreateFolders.CreateXmlFolder();
                 podcastfeed.Save(folder+@"\"+name+".xml");
-                xmlConection.writeToXml(name,Url,cat, interval);
+                xmlConection.writeToXml(name,Url,cat/*, interval*/);
         }
 
         public string FeedName(XmlDocument e)
