@@ -107,5 +107,10 @@ namespace WindowsFormsApp1
 
             }
         }
+
+        private void AddFeed_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
