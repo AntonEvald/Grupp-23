@@ -88,7 +88,6 @@ namespace WindowsFormsApp1
                     if (!Validation.textEmpty(chosenUrl))
                     {
                         Fp.Podcastlink(chosenUrl, chosenCat, chosenInt);
-                        this.Close();
 
 
                     }

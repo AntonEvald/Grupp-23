@@ -15,7 +15,7 @@ namespace ClassLibrary1
     public class Fetch_Podcast
     {
 
-        FetchXml FetchXml = new FetchXml();
+
         public void Podcastlink(string Url,string cat, string interval)
         {
             XmlConection xmlConection = new XmlConection();
@@ -54,7 +54,7 @@ namespace ClassLibrary1
             XmlNode nodeList;
             XmlNode root = e.DocumentElement;
 
-            nodeList = root.SelectSingleNode("descendant::item[title=" + tit + "]/description");
+            nodeList = root.SelectSingleNode("descendant::item[title='" + tit + "']/description");
             var descrition = nodeList.InnerText;
             return descrition;
 

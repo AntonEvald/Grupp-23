@@ -8,7 +8,7 @@ using ClassLibrary2;
 
 namespace ClassLibrary1
 {
-    public class CompareXml
+    class CompareXml
     {
 
         FetchXml fetch = new FetchXml();
@@ -22,9 +22,9 @@ namespace ClassLibrary1
             XmlNode nodeList;
             XmlNode root = doc2.DocumentElement;
 
-            nodeList = root.SelectSingleNode("descendant::Feed[Title='" + e + "']/URL");
+            nodeList = root.SelectSingleNode("descendant::Feed[title='" + e + "']/URL");
             var a = nodeList.InnerText;
-            var b = fetch.DownloadXml(a);
+            var b = FetchXml.DownloadXml(a);
             var c = load.ReadXml(e);
             int old = c.GetElementsByTagName("Item").Count;
             int rss = b.GetElementsByTagName("Item").Count;
