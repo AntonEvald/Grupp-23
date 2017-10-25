@@ -30,6 +30,7 @@ namespace ClassLibrary1
             else
             {
                 xmlConection.createXml();
+                xmlConection.writeToXml(name, Url, cat, interval);
             }
                 
         }
