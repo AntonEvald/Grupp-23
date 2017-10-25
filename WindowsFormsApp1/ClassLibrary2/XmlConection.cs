@@ -24,6 +24,7 @@ namespace ClassLibrary2
 
                     using (XmlWriter writer = XmlWriter.Create("xml.xml", settings))
                     {
+                        writer.WriteStartDocument();
                         writer.WriteStartElement("Feeds");
                         writer.WriteEndElement();
                         writer.WriteEndDocument();

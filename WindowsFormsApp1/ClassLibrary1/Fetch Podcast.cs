@@ -19,11 +19,19 @@ namespace ClassLibrary1
         public void Podcastlink(string Url,string cat, string interval)
         {
             XmlConection xmlConection = new XmlConection();
-                var podcastfeed = FetchXml.DownloadXml(Url);
-                var name = FeedName(podcastfeed);
-                var folder = CreateFolders.CreateXmlFolder();
-                podcastfeed.Save(folder+@"\"+name+".xml");
-                xmlConection.writeToXml(name,Url,cat/*, interval*/);
+            var podcastfeed = FetchXml.DownloadXml(Url);
+            var name = FeedName(podcastfeed);
+            var folder = CreateFolders.CreateXmlFolder();
+            podcastfeed.Save(folder+@"\"+name+".xml");
+            if (File.Exists("xml.xml"))
+            {
+                xmlConection.writeToXml(name, Url, cat, interval);
+            }
+            else
+            {
+                xmlConection.createXml();
+            }
+                
         }
 
         public string FeedName(XmlDocument e)
