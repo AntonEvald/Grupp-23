@@ -11,29 +11,38 @@ namespace ClassLibrary2
 {
     public class XmlConection
     {
-        public void writeToXml(string title, string url, string cat, string interval)
-        {
-            if (File.Exists("xml.xml") == false)
-            {
-                XmlWriterSettings settings = new XmlWriterSettings();
-                settings.Indent = true;
-                settings.IndentChars = ("    ");
 
-                using (XmlWriter writer = XmlWriter.Create("xml.xml", settings))
+        public static void createXml()
+        {
+            try
+            {
+                if (File.Exists("xml.xml") == false)
                 {
-                    writer.WriteStartElement("Feeds");
-                    writer.WriteStartElement("Feed");
-                    writer.WriteElementString("Title", title);
-                    writer.WriteElementString("URL", url);
-                    writer.WriteElementString("Category", cat);
-                    writer.WriteElementString("Interval", interval);
-                    writer.WriteEndElement();
-                    writer.WriteEndDocument();
-                    writer.Flush();
-                    writer.Close();
+                    XmlWriterSettings settings = new XmlWriterSettings();
+                    settings.Indent = true;
+                    settings.IndentChars = ("    ");
+
+                    using (XmlWriter writer = XmlWriter.Create("xml.xml", settings))
+                    {
+                        writer.WriteStartElement("Feeds");
+                        writer.WriteEndElement();
+                        writer.WriteEndDocument();
+                        writer.Flush();
+                        writer.Close();
+                    }
                 }
             }
-            else
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public void writeToXml(string title, string url, string cat, string interval)
+        {
+            try
             {
                 XDocument xdoc = XDocument.Load("xml.xml");
                 XElement feeds = xdoc.Element("Feeds");
@@ -44,6 +53,12 @@ namespace ClassLibrary2
                     new XElement("Interval", interval)));
                 xdoc.Save("xml.xml");
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }
