@@ -29,7 +29,7 @@ namespace ClassLibrary1
             }
             else
             {
-                xmlConection.createXml();
+                XmlConection.createXml();
                 xmlConection.writeToXml(name, Url, cat, interval);
             }
                 

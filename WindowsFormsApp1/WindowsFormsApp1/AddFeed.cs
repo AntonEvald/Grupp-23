@@ -19,10 +19,10 @@ namespace WindowsFormsApp1
         {
            
             InitializeComponent();
-            FillCombo();
+            FillCatCombo();
         }
-
-        public void FillCombo()
+        
+        public void FillCatCombo()
         {
             List<string> list = ModifyCategories.Categories;
             AddFeedCategoryCB.Items.Clear();
@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
 
         private void AddFeedCategoryCB_MouseClick(object sender, MouseEventArgs e)
         {
-            FillCombo();
+            FillCatCombo();
         }
 
         private void addFeedBtn_Click_1(object sender, EventArgs e)
@@ -108,9 +108,5 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void AddFeed_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

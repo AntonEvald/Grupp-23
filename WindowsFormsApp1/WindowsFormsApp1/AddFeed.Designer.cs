@@ -131,7 +131,6 @@
             this.Controls.Add(this.urlTB);
             this.Name = "AddFeed";
             this.Text = "AddFeed";
-            this.Load += new System.EventHandler(this.AddFeed_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
