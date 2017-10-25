@@ -19,15 +19,20 @@ namespace ClassLibrary1
             {
                 if(File.Exists("xml.xml"))
                 {
-                    XDocument xdoc = XDocument.Load("xml.xml");
-                    List <string> titleList = xdoc.Root.Elements("Title")
-                        .Select(element => element.Value)
-                        .ToList();
+                    List<string> titleList = new List<string>();
+                    XmlDocument xdoc = new XmlDocument();
+                    xdoc.Load("xml.xml");
+
+                    XmlNodeList eList = xdoc.GetElementsByTagName("Title");
+                    for(int i=0; i < eList.Count; i++)
+                    {
+                        titleList.Add(eList[i].InnerXml);
+                    }
+                    
                     return titleList;
                 }
                 else
                 {
-                    XmlConection.createXml();
                     List<string> titleList = new List<string>();
                     return titleList;
                 }

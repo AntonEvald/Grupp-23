@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             ChangeCategory cc = new ChangeCategory();
             cc.Show();
         }
-
+ 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             ModifyCategories.SaveCategories();
@@ -64,8 +64,8 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             ModifyCategories.GetCategories();
-            //PodcastNames.getPodcastsFromXML();
-            listBox1.DataSource = PodcastNames.podcastsList;
+            List<string> titles = PodcastNames.getPodcastsFromXML();
+            listBox1.DataSource = titles;
         }
 
         private void feedsBtn_Click(object sender, EventArgs e)
