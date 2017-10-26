@@ -48,6 +48,7 @@ namespace ClassLibrary2
                 XDocument xdoc = XDocument.Load("xml.xml");
                 XElement feeds = xdoc.Element("Feeds");
                 feeds.Add(new XElement("Feed",
+                    new XAttribute("id", title),
                     new XElement("Title", title),
                     new XElement("URL", url),
                     new XElement("Category", cat),
