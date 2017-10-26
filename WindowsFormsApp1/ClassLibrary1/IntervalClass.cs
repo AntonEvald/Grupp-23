@@ -11,29 +11,21 @@ namespace ClassLibrary1
 {
    
 
-    public class IntervalClass
-        
+    public static class IntervalClass
     {
-        DateTime now = DateTime.Now;
-        DateTime sevenDays = DateTime.Now.AddDays(7);
-        DateTime aMonth = DateTime.Now.AddMonths(1);
-        
-    }
-    /*public bool setNewInterval()
-    {
-        if(/*timern har passerat metod)
+        public static DateTime now = DateTime.Now;
+        public static DateTime sevenDays = DateTime.Now.AddDays(7);
+        public static DateTime aMonth = DateTime.Now.AddMonths(1);
+
+       
+        public static void setNewInterval()
         {
             CompareXml checkXml = new CompareXml();
             checkXml.Comapare("e");
 
-
-            return true;
-
         }
-        else
-        {
-            return false;
-        }
-        
-    }*/
+
+
+    }
+    
 }

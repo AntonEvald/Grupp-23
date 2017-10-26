@@ -76,19 +76,20 @@ namespace WindowsFormsApp1
 
         private void addFeedBtn_Click_1(object sender, EventArgs e)
         {
+            
             try
             {
                 Fetch_Podcast Fp = new Fetch_Podcast();
                 string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
                 string chosenUrl = urlTB.Text;
                 string chosenInt = IntervallCb.GetItemText(this.IntervallCb.SelectedItem);
-                IntervalClass T = new IntervalClass();
+                string lastUpdate = IntervalClass.now.ToString();
 
                 if (!Validation.textEmpty(chosenCat))
                 {
                     if (!Validation.textEmpty(chosenUrl))
                     {
- 
+                       
                         Fp.Podcastlink(chosenUrl, chosenCat, chosenInt);
 
 
