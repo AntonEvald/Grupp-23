@@ -71,8 +71,5 @@ namespace ClassLibrary2
         {
             File.Delete(@"..\XmlFeeds\" + title + ".xml");
         }
-
-            
-
     }
 }
