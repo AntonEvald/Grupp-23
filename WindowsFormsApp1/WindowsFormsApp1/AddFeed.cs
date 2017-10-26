@@ -82,6 +82,7 @@ namespace WindowsFormsApp1
                             MessageBox.Show("Feeden har lagts till!");
                             Close();
                         }
+
                     }
                     else
                     {

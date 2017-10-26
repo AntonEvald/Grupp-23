@@ -34,6 +34,20 @@ namespace ClassLibrary1
             }
                 
         }
+        public void Podcastlink(string title, string played)
+        {
+            XmlConection xmlConection = new XmlConection();
+            if (File.Exists("Played.xml"))
+            {
+                xmlConection.writeToXml(title, "No");
+            }
+            else
+            {
+                XmlConection.createXml();
+                xmlConection.writeToXml(title, "No");
+            }
+
+        }
 
         public string FeedName(XmlDocument e)
         {
