@@ -81,8 +81,8 @@ namespace WindowsFormsApp1
                             if (chosenInt == "Every month")
                             {
                                 Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAmonth);
-                                MessageBox.Show("Feeden har lagts till!");
                                 Close();
+                                MessageBox.Show("Feeden har lagts till!");
                             }
                         }
                         else
