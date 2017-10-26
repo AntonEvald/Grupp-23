@@ -39,12 +39,12 @@ namespace ClassLibrary1
             XmlConection xmlConection = new XmlConection();
             if (File.Exists("Played.xml"))
             {
-                xmlConection.writeToXml(title, "No");
+                xmlConection.writeToXml(title, played);
             }
             else
             {
-                XmlConection.createXml();
-                xmlConection.writeToXml(title, "No");
+                XmlConection.createXml(title);
+                xmlConection.writeToXml(title, played);
             }
 
         }

@@ -41,6 +41,37 @@ namespace ClassLibrary2
 
         }
 
+
+        public static void createXml(string a)
+        {
+            string b = a;
+            try
+            {
+                if (File.Exists("Played.xml") == false)
+                {
+                    XmlWriterSettings settings = new XmlWriterSettings();
+                    settings.Indent = true;
+                    settings.IndentChars = ("    ");
+
+                    using (XmlWriter writer = XmlWriter.Create("Played.xml", settings))
+                    {
+                        writer.WriteStartDocument();
+                        writer.WriteStartElement("Feeds");
+                        writer.WriteEndElement();
+                        writer.WriteEndDocument();
+                        writer.Flush();
+                        writer.Close();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
         public void writeToXml(string title, string url, string cat, string interval, string nextupdate, string isPlayed)
         {
             try
@@ -71,7 +102,7 @@ namespace ClassLibrary2
             try
             {
                 XDocument xdoc = XDocument.Load("xml.xml");
-                XElement feeds = xdoc.Element("Feed");
+                XElement feeds = xdoc.Element("Feeds");
                 feeds.Add(new XElement("Podcasts",
                     new XAttribute("id", title),
                     new XElement("Title", title),
