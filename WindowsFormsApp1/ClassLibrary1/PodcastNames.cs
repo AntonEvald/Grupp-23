@@ -57,6 +57,7 @@ namespace ClassLibrary1
                     XmlNode parent = node.ParentNode;
                     parent.RemoveChild(node);
                     xmlDoc.Save("xml.xml");
+                    XmlConection.removeXmlFile(title);
                 }
                 
             }

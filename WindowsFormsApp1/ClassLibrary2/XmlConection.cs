@@ -67,7 +67,12 @@ namespace ClassLibrary2
       
         
 
+        public static void removeXmlFile(string title)
+        {
+            File.Delete(@"..\XmlFeeds\" + title + ".xml");
+        }
 
+            
 
     }
 }
