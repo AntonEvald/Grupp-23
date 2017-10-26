@@ -66,10 +66,33 @@ namespace ClassLibrary2
             }
 
         }
-        /*public static setPlayedYes()
+        public void writeToXml(string title, string isPlayed)
         {
+            try
+            {
+                XDocument xdoc = XDocument.Load("xml.xml");
+                XElement feeds = xdoc.Element("Feed");
+                feeds.Add(new XElement("Podcasts",
+                    new XAttribute("id", title),
+                    new XElement("Title", title),
+                    new XElement("Played", isPlayed)));
+                xdoc.Save("xml.xml");
+            }
+            catch (Exception)
+            {
 
-        }*/
+                throw;
+            }
+
+        }
+        public static void setPlayedYes(string title)
+        {
+            XmlDocument xdoc = new XmlDocument();
+            XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+            XmlNode playedNode = node.SelectSingleNode("Played");
+            playedNode.InnerText = "Yes";
+
+        }
       
         
 
