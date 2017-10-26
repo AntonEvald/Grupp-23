@@ -19,13 +19,26 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             Download = new DownloadMp3();
-            progressBar1.Value = Download.ProgressBar;
+            label1.Text = "Downloading Episode.";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Download.Cancel();
             this.Dispose();
+            
+        }
+
+        public void Progressbar()
+        {
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 100;
+            var procent =  Download.progress;
+            while (procent < 100)
+            {
+                procent = Download.progress;
+            }
+            label1.Text = "Download Complete.";
         }
     }
 }

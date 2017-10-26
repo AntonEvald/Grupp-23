@@ -19,11 +19,12 @@ namespace WindowsFormsApp1
         Fetch_Podcast podcast;
         XmlDocument xml;
         string episode;
+        CompareXml compare = new CompareXml();
         public EpisodesForm(string a)
         {
             InitializeComponent();
             this.a = a;
-            listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_DoubleClick);
+            listBox1.MouseClick += new MouseEventHandler(listBox1_Click);
             podcast = new Fetch_Podcast();
             xml = new XmlDocument();
             xml.Load(@"..\XmlFeeds\" + a + ".xml");
@@ -38,11 +39,22 @@ namespace WindowsFormsApp1
             listBox1.DataSource = list;
         }
 
+        internal void CheckIfPlayed(string w)
+        {
+
+            var Played = compare.Check(w);
+            if (Played == "yes")
+            {
+                label3.Text = "Already Played";
+            }
+
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-        private void listBox1_DoubleClick(object sender, MouseEventArgs e)
+        private void listBox1_Click(object sender, MouseEventArgs e)
         {
 
             int index = this.listBox1.IndexFromPoint(e.Location);
@@ -51,6 +63,7 @@ namespace WindowsFormsApp1
                 string episode = listBox1.SelectedItem.ToString();
                 this.episode = episode;
                 var list = podcast.Description(xml, episode);
+                CheckIfPlayed(episode);
                 textBox1.Text = list;
                 if (File.Exists(@"..\Mp3\" + episode + ".mp3"))
                 {
@@ -69,7 +82,7 @@ namespace WindowsFormsApp1
            if(button1.Text.ToString().Contains("Play Episode"))
             {
                 PlayMp3 play = new PlayMp3();
-                play.PlayMp3File(episode);
+                play.PlayMp3File(episode); 
             }
             else
             {
@@ -79,8 +92,7 @@ namespace WindowsFormsApp1
                 window.Show();
             }
 
-
-            
         }
+
     }
 }
