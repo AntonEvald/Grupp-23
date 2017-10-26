@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class ChangeFeed : Form
     {
+
         public ChangeFeed()
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        XmlConection.UpdateXml(feed, newCat, newInt);
+                        //XmlConection.UpdateXml(feed, newCat, newInt);
                     }
                 }
             }

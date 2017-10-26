@@ -8,7 +8,7 @@ using ClassLibrary2;
 
 namespace ClassLibrary1
 {
-    class CompareXml
+    public class CompareXml
     {
 
         FetchXml fetch = new FetchXml();
@@ -38,6 +38,19 @@ namespace ClassLibrary1
             {
                 
             }
+        }
+
+        public string Check(string e)
+        {
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("Played.xml");
+            XmlNode nodeList;
+            XmlNode root = doc.DocumentElement;
+
+            nodeList = root.SelectSingleNode("descendant::Feed[title='" + e + "']/Played");
+            var a = nodeList.InnerText;
+            return a;
         }
 
     }
