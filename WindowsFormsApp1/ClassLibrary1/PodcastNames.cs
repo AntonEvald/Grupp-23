@@ -73,15 +73,15 @@ namespace ClassLibrary1
         {
             if (interval == "Every day")
             {
-                string nextupdate = IntervalClass.aDay;
+                string nextupdate = IntervalClass.aDay.ToString();
             }
             else if (interval == "Every week")
             {
-                string nextupdate = IntervalClass.aWeek;
+                string nextupdate = IntervalClass.sevenDays.ToString();
             }
             else if (interval == "Every month")
             {
-                string nextupdate = IntervalClass.aMonth;
+                string nextupdate = IntervalClass.aMonth.ToString();
             }
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load("xml.xml");
