@@ -41,7 +41,7 @@ namespace ClassLibrary2
 
         }
 
-        public void writeToXml(string title, string url, string cat, string interval, string nextupdate)
+        public void writeToXml(string title, string url, string cat, string interval, string nextupdate, string isPlayed)
         {
             try
             {
@@ -55,7 +55,8 @@ namespace ClassLibrary2
                     new XElement("Category", cat),
                     new XElement("Interval", interval),
                     new XElement("NextUpdate", nextupdate),
-                    new XElement("LastUpdate",lastUpdate )));
+                    new XElement("LastUpdate",lastUpdate ),
+                    new XElement("Played", isPlayed)));
                 xdoc.Save("xml.xml");
             }
             catch (Exception)
@@ -65,6 +66,10 @@ namespace ClassLibrary2
             }
 
         }
+        /*public static setPlayedYes()
+        {
+
+        }*/
       
         
 

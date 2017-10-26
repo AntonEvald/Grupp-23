@@ -25,12 +25,12 @@ namespace ClassLibrary1
             podcastfeed.Save(folder+@"\"+name+".xml");
             if (File.Exists("xml.xml"))
             {
-                xmlConection.writeToXml(name, Url, cat, interval, nextupdate);
+                xmlConection.writeToXml(name, Url, cat, interval, nextupdate, "No");
             }
             else
             {
                 XmlConection.createXml();
-                xmlConection.writeToXml(name, Url, cat, interval, nextupdate);
+                xmlConection.writeToXml(name, Url, cat, interval, nextupdate, "No");
             }
                 
         }
