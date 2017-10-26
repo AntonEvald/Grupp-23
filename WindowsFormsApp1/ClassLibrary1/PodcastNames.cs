@@ -71,6 +71,18 @@ namespace ClassLibrary1
 
         public static void UpdateXml(string title, string cat, string interval)
         {
+            if (interval == "Every day")
+            {
+                string nextupdate = IntervalClass.aDay;
+            }
+            else if (interval == "Every week")
+            {
+                string nextupdate = IntervalClass.aWeek;
+            }
+            else if (interval == "Every month")
+            {
+                string nextupdate = IntervalClass.aMonth;
+            }
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load("xml.xml");
             XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
