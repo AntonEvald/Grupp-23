@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary1;
 using System.Xml;
+using System.IO;
 
 namespace WindowsFormsApp1
 {
@@ -17,6 +18,7 @@ namespace WindowsFormsApp1
         private string a;
         Fetch_Podcast podcast;
         XmlDocument xml;
+        string episode;
         public EpisodesForm(string a)
         {
             InitializeComponent();
@@ -34,7 +36,6 @@ namespace WindowsFormsApp1
             label2.Text = "description";;
             var list = podcast.Episodes(xml);
             listBox1.DataSource = list;
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -48,11 +49,38 @@ namespace WindowsFormsApp1
             if (index != System.Windows.Forms.ListBox.NoMatches)
             {
                 string episode = listBox1.SelectedItem.ToString();
+                this.episode = episode;
                 var list = podcast.Description(xml, episode);
                 textBox1.Text = list;
+                if (File.Exists(@"..\Mp3\" + episode + ".mp3"))
+                {
+                    button1.Text = "Play Episode";
+                }
+                else
+                {
+                    button1.Text = "Download Episode";
+                }
             }
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+           if(button1.Text.ToString().Contains("Play Episode"))
+            {
+                PlayMp3 play = new PlayMp3();
+                play.PlayMp3File(episode);
+            }
+            else
+            {
+                DownloadMp3 download = new DownloadMp3();
+                download.Download(a, listBox1.SelectedItem.ToString());
+                DownloadWindow window = new DownloadWindow();
+                window.Show();
+            }
+
+
+            
+        }
     }
 }
