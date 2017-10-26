@@ -69,14 +69,16 @@ namespace WindowsFormsApp1
                             if (chosenInt == "Every day")
                             {
                                 Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAday);
-                                MessageBox.Show("Feeden har lagts till!");
                                 Close();
+                                MessageBox.Show("Feeden har lagts till!");
+                                
                             }
                             if (chosenInt == "Every week") ;
                             {
                                 Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateSevenDays);
-                                MessageBox.Show("Feeden har lagts till!");
                                 Close();
+                                MessageBox.Show("Feeden har lagts till!");
+                                
                             }
                             if (chosenInt == "Every month")
                             {
