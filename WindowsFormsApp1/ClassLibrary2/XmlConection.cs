@@ -41,7 +41,7 @@ namespace ClassLibrary2
 
         }
 
-        public void writeToXml(string title, string url, string cat, string interval)
+        public void writeToXml(string title, string url, string cat, string interval, string nextupdate)
         {
             try
             {
@@ -54,6 +54,7 @@ namespace ClassLibrary2
                     new XElement("URL", url),
                     new XElement("Category", cat),
                     new XElement("Interval", interval),
+                    new XElement("NextUpdate", nextupdate),
                     new XElement("LastUpdate",lastUpdate )));
                 xdoc.Save("xml.xml");
             }

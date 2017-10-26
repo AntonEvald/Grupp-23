@@ -54,17 +54,34 @@ namespace WindowsFormsApp1
                 string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
                 string chosenUrl = urlTB.Text;
                 string chosenInt = IntervallCb.GetItemText(this.IntervallCb.SelectedItem);
+
                 string lastUpdate = IntervalClass.now.ToString();
+                string updateAday = IntervalClass.aDay.ToString();
+                string updateSevenDays = IntervalClass.sevenDays.ToString();
+                string updateAmonth = IntervalClass.aMonth.ToString();
 
                 if (!Validation.textEmpty(chosenCat))
                 {
                     if (!Validation.textEmpty(chosenUrl))
                     {
-                       
-                        Fp.Podcastlink(chosenUrl, chosenCat, chosenInt);
-                        MessageBox.Show("Feeden har lagts till!");
-                        Close();
-
+                        if (chosenInt == "Every day")
+                        {
+                            Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAday);
+                            MessageBox.Show("Feeden har lagts till!");
+                            Close();
+                        }
+                        if (chosenInt == "Every week") ;
+                        {
+                            Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateSevenDays);
+                            MessageBox.Show("Feeden har lagts till!");
+                            Close();
+                        }
+                        if (chosenInt == "Every month")
+                        {
+                            Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAmonth);
+                            MessageBox.Show("Feeden har lagts till!");
+                            Close();
+                        }
                     }
                     else
                     {
