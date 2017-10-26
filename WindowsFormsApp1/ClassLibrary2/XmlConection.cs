@@ -45,6 +45,7 @@ namespace ClassLibrary2
         {
             try
             {
+                string lastUpdate = DateTime.Now.ToString(); 
                 XDocument xdoc = XDocument.Load("xml.xml");
                 XElement feeds = xdoc.Element("Feeds");
                 feeds.Add(new XElement("Feed",
@@ -52,7 +53,8 @@ namespace ClassLibrary2
                     new XElement("Title", title),
                     new XElement("URL", url),
                     new XElement("Category", cat),
-                    new XElement("Interval", interval)));
+                    new XElement("Interval", interval),
+                    new XElement("LastUpdate",lastUpdate )));
                 xdoc.Save("xml.xml");
             }
             catch (Exception)
@@ -62,6 +64,7 @@ namespace ClassLibrary2
             }
 
         }
+      
         
 
         public static void removeXmlFile(string title)
