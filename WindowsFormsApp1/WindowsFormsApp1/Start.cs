@@ -17,7 +17,9 @@ namespace WindowsFormsApp1
         public Start()
         {
             InitializeComponent();
+            listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_DoubleClick);
             fillCombo();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,5 +87,19 @@ namespace WindowsFormsApp1
             List<string> titles = PodcastNames.getPodcastsFromXML();
             listBox1.DataSource = titles;
         }
+
+        private void listBox1_DoubleClick(object sender, MouseEventArgs e)
+        {
+
+            int index = this.listBox1.IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                string a = listBox1.SelectedItem.ToString();
+                EpisodesForm form = new EpisodesForm(a);
+                form.Show();
+
+            }
+        }
+
     }
 }
