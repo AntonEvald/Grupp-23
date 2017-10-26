@@ -48,7 +48,7 @@
     <Compile Include="ModifyCategories.cs" />
     <Compile Include="Fetch Podcast.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Timer.cs" />
+    <Compile Include="IntervalClass.cs" />
     <Compile Include="Validation.cs" />
   </ItemGroup>
   <ItemGroup>
