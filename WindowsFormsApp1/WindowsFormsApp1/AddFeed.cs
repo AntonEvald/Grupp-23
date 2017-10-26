@@ -33,35 +33,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void AddFeedBtn_Click(object sender, EventArgs e)
-        {
-            try {
-                string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
-                string chosenUrl = urlTB.Text;
-                if (Validation.textEmpty(chosenCat))
-                {
-                    MessageBox.Show("Du måste ange en kategori");
-                }
-                else
-                {
-                    MessageBox.Show("Du måste ange en kategori");
-                    if (Validation.IsXML(chosenUrl) && !Validation.textEmpty(chosenUrl))
-                    {
-
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Du måste ange en giltig url");
-                    }
-                }
-            }
-            catch (Exception)
-            {
-               
-                throw;
-            }
-        }
 
         private void addCategoryBtn_Click(object sender, EventArgs e)
         {
@@ -90,7 +61,8 @@ namespace WindowsFormsApp1
                     {
  
                         Fp.Podcastlink(chosenUrl, chosenCat, chosenInt);
-
+                        MessageBox.Show("Feeden har lagts till!");
+                        Close();
 
                     }
                     else

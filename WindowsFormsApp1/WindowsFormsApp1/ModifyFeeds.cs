@@ -21,18 +21,21 @@ namespace WindowsFormsApp1
         {
             AddFeed AF = new AddFeed();
             AF.Show();
+            Close();
         }
 
         private void removeFeedBtn_Click(object sender, EventArgs e)
         {
             RemoveFeed rf = new RemoveFeed();
             rf.Show();
+            Close();
         }
 
         private void alterFeed_Click(object sender, EventArgs e)
         {
             ChangeFeed cf = new ChangeFeed();
             cf.Show();
+            Close();
         }
     }
 }
