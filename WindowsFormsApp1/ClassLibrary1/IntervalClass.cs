@@ -14,6 +14,7 @@ namespace ClassLibrary1
     public static class IntervalClass
     {
         public static DateTime now = DateTime.Now;
+        public static DateTime aDay = DateTime.Now.AddDays(1);
         public static DateTime sevenDays = DateTime.Now.AddDays(7);
         public static DateTime aMonth = DateTime.Now.AddMonths(1);
 

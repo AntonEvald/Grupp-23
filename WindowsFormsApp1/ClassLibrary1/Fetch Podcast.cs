@@ -16,7 +16,7 @@ namespace ClassLibrary1
     {
 
 
-        public void Podcastlink(string Url,string cat, string interval)
+        public void Podcastlink(string Url,string cat, string interval, string nextupdate)
         {
             XmlConection xmlConection = new XmlConection();
             XmlDocument podcastfeed = FetchXml.DownloadXml(Url);
@@ -25,12 +25,12 @@ namespace ClassLibrary1
             podcastfeed.Save(folder+@"\"+name+".xml");
             if (File.Exists("xml.xml"))
             {
-                xmlConection.writeToXml(name, Url, cat, interval);
+                xmlConection.writeToXml(name, Url, cat, interval, nextupdate, "No");
             }
             else
             {
                 XmlConection.createXml();
-                xmlConection.writeToXml(name, Url, cat, interval);
+                xmlConection.writeToXml(name, Url, cat, interval, nextupdate, "No");
             }
                 
         }

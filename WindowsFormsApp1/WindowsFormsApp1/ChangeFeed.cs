@@ -13,7 +13,6 @@ namespace WindowsFormsApp1
 {
     public partial class ChangeFeed : Form
     {
-
         public ChangeFeed()
         {
             InitializeComponent();
@@ -63,7 +62,9 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        //XmlConection.UpdateXml(feed, newCat, newInt);
+                        PodcastNames.UpdateXml(feed, newCat, newInt);
+                        MessageBox.Show("Feeden: " + feed + "har ändrats!");
+                        Close();
                     }
                 }
             }

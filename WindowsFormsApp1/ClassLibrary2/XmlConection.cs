@@ -41,7 +41,7 @@ namespace ClassLibrary2
 
         }
 
-        public void writeToXml(string title, string url, string cat, string interval)
+        public void writeToXml(string title, string url, string cat, string interval, string nextupdate, string isPlayed)
         {
             try
             {
@@ -54,7 +54,9 @@ namespace ClassLibrary2
                     new XElement("URL", url),
                     new XElement("Category", cat),
                     new XElement("Interval", interval),
-                    new XElement("LastUpdate",lastUpdate )));
+                    new XElement("NextUpdate", nextupdate),
+                    new XElement("LastUpdate",lastUpdate ),
+                    new XElement("Played", isPlayed)));
                 xdoc.Save("xml.xml");
             }
             catch (Exception)
@@ -64,6 +66,10 @@ namespace ClassLibrary2
             }
 
         }
+        /*public static setPlayedYes()
+        {
+
+        }*/
       
         
 
@@ -71,8 +77,5 @@ namespace ClassLibrary2
         {
             File.Delete(@"..\XmlFeeds\" + title + ".xml");
         }
-
-            
-
     }
 }
