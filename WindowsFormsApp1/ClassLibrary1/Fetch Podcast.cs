@@ -19,7 +19,7 @@ namespace ClassLibrary1
         public void Podcastlink(string Url,string cat, string interval)
         {
             XmlConection xmlConection = new XmlConection();
-            var podcastfeed = FetchXml.DownloadXml(Url);
+            XmlDocument podcastfeed = FetchXml.DownloadXml(Url);
             var name = FeedName(podcastfeed);
             var folder = CreateFolders.CreateXmlFolder();
             podcastfeed.Save(folder+@"\"+name+".xml");
@@ -56,10 +56,10 @@ namespace ClassLibrary1
             return episodes;
         }
 
-        public string Description(XmlDocument e)
+        public string Description(XmlDocument e, string a)
         {
-            
-            var tit = FeedName(e);
+
+            var tit = a;
             XmlNode nodeList;
             XmlNode root = e.DocumentElement;
 

@@ -73,6 +73,12 @@
     <Compile Include="ChangeFeed.Designer.cs">
       <DependentUpon>ChangeFeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="EpisodesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EpisodesForm.Designer.cs">
+      <DependentUpon>EpisodesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifyFeeds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeFeed.resx">
       <DependentUpon>ChangeFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EpisodesForm.resx">
+      <DependentUpon>EpisodesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModifyFeeds.resx">
       <DependentUpon>ModifyFeeds.cs</DependentUpon>

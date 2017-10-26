@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
-            String feed = removeCombo.GetItemText(this.removeCombo.SelectedIndex);
+            String feed = removeCombo.GetItemText(this.removeCombo.SelectedItem);
             if (Validation.textEmpty(feed))
             {
                 MessageBox.Show("Du måst välja en feed att ta bort!");
@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
             else
             {
                 PodcastNames.RemoveFromXml(feed);
-                MessageBox.Show(feed + "har tagits bort!");
+                MessageBox.Show(feed + " har tagits bort!");
                 Close();
             }
         }

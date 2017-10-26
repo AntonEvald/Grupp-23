@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.IO;
+using System.Diagnostics;
 
 namespace ClassLibrary1
 {
@@ -48,15 +49,16 @@ namespace ClassLibrary1
         {
             try
             {
-                XDocument xdoc = new XDocument();
-                xdoc = XDocument.Load("xml.xml");
-                var element = (
-                    from x in xdoc.Root.Elements("Feed")
-                    where x.Element("Title").Value == title
-                    select x)
-                    .FirstOrDefault();
-                element.Remove();
-                xdoc.Save("xml.xml");
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load("xml.xml");
+                XmlNode node = xmlDoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+                if(node != null)
+                {
+                    XmlNode parent = node.ParentNode;
+                    parent.RemoveChild(node);
+                    xmlDoc.Save("xml.xml");
+                }
+                
             }
             catch (Exception)
             {
