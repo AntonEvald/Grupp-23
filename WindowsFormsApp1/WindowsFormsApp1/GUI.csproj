@@ -73,6 +73,12 @@
     <Compile Include="ChangeFeed.Designer.cs">
       <DependentUpon>ChangeFeed.cs</DependentUpon>
     </Compile>
+    <Compile Include="DownloadWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadWindow.Designer.cs">
+      <DependentUpon>DownloadWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="EpisodesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeFeed.resx">
       <DependentUpon>ChangeFeed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DownloadWindow.resx">
+      <DependentUpon>DownloadWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EpisodesForm.resx">
       <DependentUpon>EpisodesForm.cs</DependentUpon>

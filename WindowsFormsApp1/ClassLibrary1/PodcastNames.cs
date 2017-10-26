@@ -68,5 +68,17 @@ namespace ClassLibrary1
             }
 
         }
+
+        public static void UpdateXml(string title, string cat, string interval)
+        {
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.Load("xml.xml");
+            XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+            XmlNode catNode = node.SelectSingleNode("Category");
+            catNode.InnerText = cat;
+            XmlNode intNode = node.SelectSingleNode("Interval");
+            intNode.InnerText = interval;
+            xdoc.Save("xml.xml");
+        }
     }
 }
