@@ -32,6 +32,11 @@ namespace ClassLibrary1
             if(old < rss)
             {
                 b.Save(@"..\XmlFeeds\"+e+".xml");
+                
+            }
+            else
+            {
+                
             }
         }
 

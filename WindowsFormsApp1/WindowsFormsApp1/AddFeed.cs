@@ -33,35 +33,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void AddFeedBtn_Click(object sender, EventArgs e)
-        {
-            try {
-                string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
-                string chosenUrl = urlTB.Text;
-                if (Validation.textEmpty(chosenCat))
-                {
-                    MessageBox.Show("Du måste ange en kategori");
-                }
-                else
-                {
-                    MessageBox.Show("Du måste ange en kategori");
-                    if (Validation.IsXML(chosenUrl) && !Validation.textEmpty(chosenUrl))
-                    {
-
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Du måste ange en giltig url");
-                    }
-                }
-            }
-            catch (Exception)
-            {
-               
-                throw;
-            }
-        }
 
         private void addCategoryBtn_Click(object sender, EventArgs e)
         {
@@ -76,19 +47,23 @@ namespace WindowsFormsApp1
 
         private void addFeedBtn_Click_1(object sender, EventArgs e)
         {
+            
             try
             {
                 Fetch_Podcast Fp = new Fetch_Podcast();
                 string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
                 string chosenUrl = urlTB.Text;
                 string chosenInt = IntervallCb.GetItemText(this.IntervallCb.SelectedItem);
+                string lastUpdate = IntervalClass.now.ToString();
 
                 if (!Validation.textEmpty(chosenCat))
                 {
                     if (!Validation.textEmpty(chosenUrl))
                     {
+                       
                         Fp.Podcastlink(chosenUrl, chosenCat, chosenInt);
-
+                        MessageBox.Show("Feeden har lagts till!");
+                        Close();
 
                     }
                     else
