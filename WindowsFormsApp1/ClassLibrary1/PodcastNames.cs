@@ -71,26 +71,49 @@ namespace ClassLibrary1
 
         public static void UpdateXml(string title, string cat, string interval)
         {
+            string nextupdate;
             if (interval == "Every day")
             {
-                string nextupdate = IntervalClass.aDay.ToString();
+                nextupdate = IntervalClass.aDay.ToString();
+                XmlDocument xdoc = new XmlDocument();
+                xdoc.Load("xml.xml");
+                XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+                XmlNode catNode = node.SelectSingleNode("Category");
+                catNode.InnerText = cat;
+                XmlNode intNode = node.SelectSingleNode("Interval");
+                intNode.InnerText = interval;
+                XmlNode nuNode = node.SelectSingleNode("NextUpdate");
+                nuNode.InnerText = nextupdate;
+                xdoc.Save("xml.xml");
             }
             else if (interval == "Every week")
             {
-                string nextupdate = IntervalClass.sevenDays.ToString();
+                nextupdate = IntervalClass.sevenDays.ToString();
+                XmlDocument xdoc = new XmlDocument();
+                xdoc.Load("xml.xml");
+                XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+                XmlNode catNode = node.SelectSingleNode("Category");
+                catNode.InnerText = cat;
+                XmlNode intNode = node.SelectSingleNode("Interval");
+                intNode.InnerText = interval;
+                XmlNode nuNode = node.SelectSingleNode("NextUpdate");
+                nuNode.InnerText = nextupdate;
+                xdoc.Save("xml.xml");
             }
             else if (interval == "Every month")
             {
-                string nextupdate = IntervalClass.aMonth.ToString();
+                nextupdate = IntervalClass.aMonth.ToString();
+                XmlDocument xdoc = new XmlDocument();
+                xdoc.Load("xml.xml");
+                XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+                XmlNode catNode = node.SelectSingleNode("Category");
+                catNode.InnerText = cat;
+                XmlNode intNode = node.SelectSingleNode("Interval");
+                intNode.InnerText = interval;
+                XmlNode nuNode = node.SelectSingleNode("NextUpdate");
+                nuNode.InnerText = nextupdate;
+                xdoc.Save("xml.xml");
             }
-            XmlDocument xdoc = new XmlDocument();
-            xdoc.Load("xml.xml");
-            XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
-            XmlNode catNode = node.SelectSingleNode("Category");
-            catNode.InnerText = cat;
-            XmlNode intNode = node.SelectSingleNode("Interval");
-            intNode.InnerText = interval;
-            xdoc.Save("xml.xml");
         }
     }
 }
