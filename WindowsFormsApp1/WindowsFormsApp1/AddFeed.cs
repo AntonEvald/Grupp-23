@@ -64,24 +64,32 @@ namespace WindowsFormsApp1
                 {
                     if (!Validation.textEmpty(chosenUrl))
                     {
-                        if (chosenInt == "Every day")
+                        if (!PodcastNames.FeedExists(chosenUrl))
                         {
-                            Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAday);
-                            MessageBox.Show("Feeden har lagts till!");
-                            Close();
+                            if (chosenInt == "Every day")
+                            {
+                                Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAday);
+                                MessageBox.Show("Feeden har lagts till!");
+                                Close();
+                            }
+                            if (chosenInt == "Every week") ;
+                            {
+                                Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateSevenDays);
+                                MessageBox.Show("Feeden har lagts till!");
+                                Close();
+                            }
+                            if (chosenInt == "Every month")
+                            {
+                                Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAmonth);
+                                MessageBox.Show("Feeden har lagts till!");
+                                Close();
+                            }
                         }
-                        if (chosenInt == "Every week") ;
+                        else
                         {
-                            Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateSevenDays);
-                            MessageBox.Show("Feeden har lagts till!");
-                            Close();
+                            MessageBox.Show("Denna feed finns redan!");
                         }
-                        if (chosenInt == "Every month")
-                        {
-                            Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAmonth);
-                            MessageBox.Show("Feeden har lagts till!");
-                            Close();
-                        }
+                        
                     }
                     else
                     {

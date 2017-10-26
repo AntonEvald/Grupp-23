@@ -115,5 +115,19 @@ namespace ClassLibrary1
                 xdoc.Save("xml.xml");
             }
         }
+
+        public static bool FeedExists(string url)
+        {
+            XDocument doc = XDocument.Load("xml.xml");
+            var result = doc.Descendants("Feed").Any(x => x.Element("URL").Value.Equals(url));
+            if (result == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
