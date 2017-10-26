@@ -79,5 +79,11 @@ namespace WindowsFormsApp1
             MCForm mcf = new MCForm();
             mcf.Show();
         }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            List<string> titles = PodcastNames.getPodcastsFromXML();
+            listBox1.DataSource = titles;
+        }
     }
 }

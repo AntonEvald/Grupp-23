@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClassLibrary1;
 
 namespace WindowsFormsApp1
 {
@@ -15,11 +16,32 @@ namespace WindowsFormsApp1
         public RemoveFeed()
         {
             InitializeComponent();
+            fillCombo();
         }
 
         private void RemoveBtn_Click(object sender, EventArgs e)
         {
             String feed = removeCombo.GetItemText(this.removeCombo.SelectedIndex);
+            if (Validation.textEmpty(feed))
+            {
+                MessageBox.Show("Du måst välja en feed att ta bort!");
+            }
+            else
+            {
+                PodcastNames.RemoveFromXml(feed);
+                MessageBox.Show(feed + "har tagits bort!");
+                Close();
+            }
+        }
+
+        private void fillCombo()
+        {
+            removeCombo.Items.Clear();
+            List<string> titles = PodcastNames.getPodcastsFromXML();
+            foreach(string title in titles)
+            {
+                removeCombo.Items.Add(title);
+            }
         }
     }
 }

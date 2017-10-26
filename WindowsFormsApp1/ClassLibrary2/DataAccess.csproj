@@ -46,8 +46,5 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XmlConection.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="xml.xml" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

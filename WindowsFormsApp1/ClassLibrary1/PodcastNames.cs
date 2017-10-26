@@ -43,5 +43,27 @@ namespace ClassLibrary1
                 throw;
             }
         }
+
+        public static void RemoveFromXml(string title)
+        {
+            try
+            {
+                XDocument xdoc = new XDocument();
+                xdoc = XDocument.Load("xml.xml");
+                var element = (
+                    from x in xdoc.Root.Elements("Feed")
+                    where x.Element("Title").Value == title
+                    select x)
+                    .FirstOrDefault();
+                element.Remove();
+                xdoc.Save("xml.xml");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
     }
 }
