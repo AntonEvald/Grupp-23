@@ -6,6 +6,7 @@ using System.Xml;
 using System.IO;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using System.Xml.XPath;
 
 namespace ClassLibrary2
 {
@@ -118,16 +119,18 @@ namespace ClassLibrary2
         }
         public static void setPlayedYes(string title)
         {
-            XmlDocument xdoc = new XmlDocument();
-            XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
-            XmlNode playedNode = node.SelectSingleNode("Played");
-            playedNode.InnerText = "Yes";
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load("Played.xml");
+            XmlNode node = xmlDoc.SelectSingleNode("/Feeds/Podcasts[@id='" + title + "']");
+            XmlNode a = node.SelectSingleNode("Played");
+            a.InnerText = "Yes";
+            xmlDoc.Save("played.xml");
 
         }
-      
-        
 
-        public static void removeXmlFile(string title)
+
+            public static void removeXmlFile(string title)
         {
             File.Delete(@"..\XmlFeeds\" + title + ".xml");
         }

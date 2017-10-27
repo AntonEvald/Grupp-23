@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ClassLibrary1;
 using System.Xml;
 using System.IO;
+using System.Threading;
 
 namespace WindowsFormsApp1
 {
@@ -47,7 +48,10 @@ namespace WindowsFormsApp1
             {
                 label3.Text = "Already Played";
             }
-
+            else
+            {
+                label3.Text = "";
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
