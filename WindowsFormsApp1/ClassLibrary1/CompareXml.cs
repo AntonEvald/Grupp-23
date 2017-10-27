@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using ClassLibrary2;
+using System.Diagnostics;
 
 namespace ClassLibrary1
 {
@@ -22,13 +23,14 @@ namespace ClassLibrary1
             XmlNode nodeList;
             XmlNode root = doc2.DocumentElement;
 
-            nodeList = root.SelectSingleNode("descendant::Feed[title='" + e + "']/URL");
+            nodeList = root.SelectSingleNode("descendant::Feed[Title='" + e + "']/URL");
             var a = nodeList.InnerText;
             var b = FetchXml.DownloadXml(a);
             var c = load.ReadXml(e);
             int old = c.GetElementsByTagName("Item").Count;
             int rss = b.GetElementsByTagName("Item").Count;
-
+            Debug.WriteLine(old);
+            Debug.WriteLine(rss);
             if (old < rss)
             {
                 b.Save(@"..\XmlFeeds\" + e + ".xml");
