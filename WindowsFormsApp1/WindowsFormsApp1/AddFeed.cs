@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
                                 MessageBox.Show("Feeden har lagts till!");
                                 
                             }
-                            if (chosenInt == "Every week") ;
+                            if (chosenInt == "Every week")
                             {
                                 Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateSevenDays);
                                 Close();

@@ -12,10 +12,9 @@ namespace ClassLibrary1
 
         public void PlayMp3File(string s)
         {
-            Fetch_Podcast podcast = new Fetch_Podcast();
-            string Played = "Yes";
+            XmlConection xmlConection = new XmlConection();
             System.Diagnostics.Process.Start(@"..\Mp3\"+s+".mp3");
-            podcast.Podcastlink(s,Played);
+            XmlConection.setPlayedYes(s);
         }
 
     }

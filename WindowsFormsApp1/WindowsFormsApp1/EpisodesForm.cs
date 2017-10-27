@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
         {
 
             var Played = compare.Check(w);
-            if (Played == "yes")
+            if (Played == "Yes")
             {
                 label3.Text = "Already Played";
             }
@@ -63,6 +63,7 @@ namespace WindowsFormsApp1
                 string episode = listBox1.SelectedItem.ToString();
                 this.episode = episode;
                 var list = podcast.Description(xml, episode);
+                podcast.Podcastlink(episode);
                 CheckIfPlayed(episode);
                 textBox1.Text = list;
                 if (File.Exists(@"..\Mp3\" + episode + ".mp3"))

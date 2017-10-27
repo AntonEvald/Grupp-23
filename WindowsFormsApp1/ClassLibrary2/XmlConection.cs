@@ -97,17 +97,17 @@ namespace ClassLibrary2
             }
 
         }
-        public void writeToXml(string title, string isPlayed)
+        public void writeToXml(string title)
         {
             try
             {
-                XDocument xdoc = XDocument.Load("xml.xml");
+                XDocument xdoc = XDocument.Load("Played.xml");
                 XElement feeds = xdoc.Element("Feeds");
                 feeds.Add(new XElement("Podcasts",
                     new XAttribute("id", title),
                     new XElement("Title", title),
-                    new XElement("Played", isPlayed)));
-                xdoc.Save("xml.xml");
+                    new XElement("Played", "No")));
+                xdoc.Save("Played.xml");
             }
             catch (Exception)
             {

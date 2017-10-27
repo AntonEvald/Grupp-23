@@ -21,6 +21,7 @@ namespace ClassLibrary1
             XmlConection xmlConection = new XmlConection();
             XmlDocument podcastfeed = FetchXml.DownloadXml(Url);
             var name = FeedName(podcastfeed);
+            Podcastlink(name);
             var folder = CreateFolders.CreateXmlFolder();
             podcastfeed.Save(folder+@"\"+name+".xml");
             if (File.Exists("xml.xml"))
@@ -34,17 +35,17 @@ namespace ClassLibrary1
             }
                 
         }
-        public void Podcastlink(string title, string played)
+        public void Podcastlink(string title)
         {
             XmlConection xmlConection = new XmlConection();
             if (File.Exists("Played.xml"))
             {
-                xmlConection.writeToXml(title, played);
+                xmlConection.writeToXml(title);
             }
             else
             {
                 XmlConection.createXml(title);
-                xmlConection.writeToXml(title, played);
+                xmlConection.writeToXml(title);
             }
 
         }
