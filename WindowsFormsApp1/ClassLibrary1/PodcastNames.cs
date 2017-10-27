@@ -118,16 +118,24 @@ namespace ClassLibrary1
 
         public static bool FeedExists(string url)
         {
-            XDocument doc = XDocument.Load("xml.xml");
-            var result = doc.Descendants("Feed").Any(x => x.Element("URL").Value.Equals(url));
-            if (result == true)
+            if (File.Exists("xml.xml"))
             {
-                return true;
+                XDocument doc = XDocument.Load("xml.xml");
+                var result = doc.Descendants("Feed").Any(x => x.Element("URL").Value.Equals(url));
+                if (result == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
                 return false;
             }
+            
         }
 
         public static List<string> fList(string cat)
