@@ -7,6 +7,7 @@ using ClassLibrary2;
 using System.IO;
 using System.Xml.Serialization;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace ClassLibrary1
 {
@@ -15,7 +16,7 @@ namespace ClassLibrary1
     public class Fetch_Podcast
     {
 
-
+        CompareXml CompareXml = new CompareXml();
         public void Podcastlink(string Url,string cat, string interval, string nextupdate)
         {
             XmlConection xmlConection = new XmlConection();
@@ -37,17 +38,25 @@ namespace ClassLibrary1
         }
         public void Podcastlink(string title)
         {
-            XmlConection xmlConection = new XmlConection();
-            if (File.Exists("Played.xml"))
+
+            XmlConection xml = new XmlConection();
+            if (File.Exists("played.xml"))
             {
-                xmlConection.writeToXml(title);
+                XDocument doc = XDocument.Load("Played.xml");
+                var CustNoExist = doc.Descendants("Title").Any(x => (string)x == title);
+                if (CustNoExist == false)
+                {
+                    xml.writeToXml(title);
+                }
             }
+            
             else
             {
                 XmlConection.createXml(title);
-                xmlConection.writeToXml(title);
+                xml.writeToXml(title);
             }
 
+         
         }
 
         public string FeedName(XmlDocument e)

@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
                     else
                     {
                         PodcastNames.UpdateXml(feed, newCat, newInt);
-                        MessageBox.Show("Feeden: " + feed + "har ändrats!");
+                        MessageBox.Show("Feeden: " + feed + " har ändrats!");
                         Close();
                     }
                 }

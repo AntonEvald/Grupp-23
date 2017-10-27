@@ -118,16 +118,24 @@ namespace ClassLibrary1
 
         public static bool FeedExists(string url)
         {
-            XDocument doc = XDocument.Load("xml.xml");
-            var result = doc.Descendants("Feed").Any(x => x.Element("URL").Value.Equals(url));
-            if (result == true)
+            if (File.Exists("xml.xml"))
             {
-                return true;
+                XDocument doc = XDocument.Load("xml.xml");
+                var result = doc.Descendants("Feed").Any(x => x.Element("URL").Value.Equals(url));
+                if (result == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
                 return false;
             }
+            
         }
 
         public static List<string> fList(string cat)
@@ -147,7 +155,6 @@ namespace ClassLibrary1
                     XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
                     XmlNode catNode = node.SelectSingleNode("Category");
                     string category = catNode.InnerText;
-                    Debug.WriteLine("Är den null: " + category);
                     if(cat == category)
                     {
                         filtredList.Add(title);

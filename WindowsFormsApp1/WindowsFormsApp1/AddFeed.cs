@@ -73,18 +73,22 @@ namespace WindowsFormsApp1
                                 MessageBox.Show("Feeden har lagts till!");
                                 
                             }
-                            if (chosenInt == "Every week")
+                            else if (chosenInt == "Every week")
                             {
                                 Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateSevenDays);
                                 Close();
                                 MessageBox.Show("Feeden har lagts till!");
                                 
                             }
-                            if (chosenInt == "Every month")
+                            else if (chosenInt == "Every month")
                             {
                                 Fp.Podcastlink(chosenUrl, chosenCat, chosenInt, updateAmonth);
                                 Close();
                                 MessageBox.Show("Feeden har lagts till!");
+                            }
+                            else if (Validation.textEmpty(chosenInt))
+                            {
+                                MessageBox.Show("Du måste välja ett intervall");
                             }
                         }
                         else
