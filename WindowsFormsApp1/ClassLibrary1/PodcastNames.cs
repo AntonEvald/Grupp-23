@@ -155,7 +155,6 @@ namespace ClassLibrary1
                     XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
                     XmlNode catNode = node.SelectSingleNode("Category");
                     string category = catNode.InnerText;
-                    Debug.WriteLine("Är den null: " + category);
                     if(cat == category)
                     {
                         filtredList.Add(title);
