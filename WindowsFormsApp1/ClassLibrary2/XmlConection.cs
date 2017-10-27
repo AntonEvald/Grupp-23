@@ -123,9 +123,11 @@ namespace ClassLibrary2
         public static void setPlayedYes(string title)
         {
             XmlDocument xdoc = new XmlDocument();
-            XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+            xdoc.Load("Played.xml");
+            XmlNode node = xdoc.SelectSingleNode("/Feeds/Podcasts[@id='" + title + "']");
             XmlNode playedNode = node.SelectSingleNode("Played");
             playedNode.InnerText = "Yes";
+            xdoc.Save("Played.xml");
 
         }
         public static string getSingleNextUpdate(string title)
