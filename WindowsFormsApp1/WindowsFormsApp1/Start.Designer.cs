@@ -38,11 +38,10 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 31;
-            this.listBox1.Location = new System.Drawing.Point(11, 21);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBox1.Location = new System.Drawing.Point(4, 9);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1367, 593);
+            this.listBox1.Size = new System.Drawing.Size(515, 251);
             this.listBox1.TabIndex = 1;
             // 
             // categoryCombo
@@ -52,21 +51,21 @@
             this.categoryCombo.FormattingEnabled = true;
             this.categoryCombo.Items.AddRange(new object[] {
             "All"});
-            this.categoryCombo.Location = new System.Drawing.Point(1475, 24);
-            this.categoryCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.categoryCombo.Location = new System.Drawing.Point(553, 10);
+            this.categoryCombo.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.categoryCombo.MaxDropDownItems = 10;
             this.categoryCombo.Name = "categoryCombo";
-            this.categoryCombo.Size = new System.Drawing.Size(380, 39);
+            this.categoryCombo.Size = new System.Drawing.Size(145, 21);
             this.categoryCombo.TabIndex = 3;
             this.categoryCombo.SelectedIndexChanged += new System.EventHandler(this.categoryCombo_SelectedIndexChanged);
             this.categoryCombo.Click += new System.EventHandler(this.categoryCombo_Click);
             // 
             // feedsBtn
             // 
-            this.feedsBtn.Location = new System.Drawing.Point(1459, 508);
-            this.feedsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.feedsBtn.Location = new System.Drawing.Point(547, 213);
+            this.feedsBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.feedsBtn.Name = "feedsBtn";
-            this.feedsBtn.Size = new System.Drawing.Size(320, 69);
+            this.feedsBtn.Size = new System.Drawing.Size(120, 29);
             this.feedsBtn.TabIndex = 6;
             this.feedsBtn.Text = "Modify Feeds";
             this.feedsBtn.UseVisualStyleBackColor = true;
@@ -74,10 +73,10 @@
             // 
             // ModifyCategoriesBtn
             // 
-            this.ModifyCategoriesBtn.Location = new System.Drawing.Point(1459, 627);
-            this.ModifyCategoriesBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ModifyCategoriesBtn.Location = new System.Drawing.Point(547, 263);
+            this.ModifyCategoriesBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.ModifyCategoriesBtn.Name = "ModifyCategoriesBtn";
-            this.ModifyCategoriesBtn.Size = new System.Drawing.Size(320, 69);
+            this.ModifyCategoriesBtn.Size = new System.Drawing.Size(120, 29);
             this.ModifyCategoriesBtn.TabIndex = 7;
             this.ModifyCategoriesBtn.Text = "Modify Categories";
             this.ModifyCategoriesBtn.UseVisualStyleBackColor = true;
@@ -85,9 +84,10 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Location = new System.Drawing.Point(41, 627);
+            this.UpdateBtn.Location = new System.Drawing.Point(15, 263);
+            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(244, 69);
+            this.UpdateBtn.Size = new System.Drawing.Size(92, 29);
             this.UpdateBtn.TabIndex = 8;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = true;
@@ -95,16 +95,16 @@
             // 
             // Start
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1888, 992);
+            this.ClientSize = new System.Drawing.Size(758, 336);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.ModifyCategoriesBtn);
             this.Controls.Add(this.feedsBtn);
             this.Controls.Add(this.categoryCombo);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "Start";
             this.Text = "Podcast player";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
