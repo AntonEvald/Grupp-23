@@ -58,6 +58,7 @@
             this.categoryCombo.Name = "categoryCombo";
             this.categoryCombo.Size = new System.Drawing.Size(380, 39);
             this.categoryCombo.TabIndex = 3;
+            this.categoryCombo.SelectedIndexChanged += new System.EventHandler(this.categoryCombo_SelectedIndexChanged);
             this.categoryCombo.Click += new System.EventHandler(this.categoryCombo_Click);
             // 
             // feedsBtn

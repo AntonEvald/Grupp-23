@@ -129,5 +129,33 @@ namespace ClassLibrary1
                 return false;
             }
         }
+
+        public static List<string> fList(string cat)
+        {
+            List<string> titles = getPodcastsFromXML();
+            List<string> filtredList = new List<string>();
+            if(cat == "All")
+            {
+                return titles;
+            }
+            else
+            {
+                foreach (string title in titles)
+                {
+                    XmlDocument xdoc = new XmlDocument();
+                    xdoc.Load("xml.xml");
+                    XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+                    XmlNode catNode = node.SelectSingleNode("Category");
+                    string category = catNode.InnerText;
+                    Debug.WriteLine("Är den null: " + category);
+                    if(cat == category)
+                    {
+                        filtredList.Add(title);
+                    }
+                }
+                return filtredList;
+            }
+            
+        }
     }
 }

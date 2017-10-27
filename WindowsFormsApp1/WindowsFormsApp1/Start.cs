@@ -101,5 +101,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void categoryCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCat = categoryCombo.GetItemText(this.categoryCombo.SelectedItem);
+            List<string> filtredTitles = PodcastNames.fList(selectedCat);
+            listBox1.DataSource = filtredTitles;
+        }
     }
 }
