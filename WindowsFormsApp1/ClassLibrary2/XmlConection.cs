@@ -123,28 +123,26 @@ namespace ClassLibrary2
         public static void setPlayedYes(string title)
         {
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load("xml.xml");
-            XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
+            xdoc.Load("Played.xml");
+            XmlNode node = xdoc.SelectSingleNode("/Feeds/Podcasts[@id='" + title + "']");
             XmlNode playedNode = node.SelectSingleNode("Played");
             playedNode.InnerText = "Yes";
+            xdoc.Save("Played.xml");
 
         }
         public static string getSingleNextUpdate(string title)
         {
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load("xml.xml");
             XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
             XmlNode NextUpdateNode = node.SelectSingleNode("NextUpdate");
-            return NextUpdateNode.InnerText;
-            
+            return NextUpdateNode.ToString();
         }
         public static string getIntString(string title)
         {
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load("xml.xml");
             XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
             XmlNode IntervalNode = node.SelectSingleNode("Interval");
-            return IntervalNode.InnerText;
+            return IntervalNode.ToString();
         }
         public static void setNextupdate(string title)
         {
@@ -157,7 +155,6 @@ namespace ClassLibrary2
                 XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
                 XmlNode nuNode = node.SelectSingleNode("NextUpdate");
                 nuNode.InnerText = aDay.ToString();
-                xdoc.Save("xml.xml");
             }
             else if (interval == "Every week")
             {
@@ -166,7 +163,6 @@ namespace ClassLibrary2
                 XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
                 XmlNode nuNode = node.SelectSingleNode("NextUpdate");
                 nuNode.InnerText = aWeek.ToString();
-                xdoc.Save("xml.xml");
             }
             else if (interval == "Every month")
             {
@@ -175,7 +171,6 @@ namespace ClassLibrary2
                 XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
                 XmlNode nuNode = node.SelectSingleNode("NextUpdate");
                 nuNode.InnerText = aMonth.ToString();
-                xdoc.Save("xml.xml");
             }
         }
         public static List<string> getNextUpdate()

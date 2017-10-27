@@ -13,32 +13,17 @@ namespace WindowsFormsApp1
 {
     public partial class DownloadWindow : Form
     {
-        DownloadMp3 Download;
-
-        public DownloadWindow()
+        DownloadMp3 DownloadMp3 = new DownloadMp3();
+        public DownloadWindow(string b)
         {
             InitializeComponent();
-            Download = new DownloadMp3();
-            label1.Text = "Downloading Episode.";
+            label1.Text = "Downloading Episode:  " + b;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Download.Cancel();
+            DownloadMp3.Cancel();
             this.Dispose();
-            
-        }
-
-        public void Progressbar()
-        {
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = 100;
-            var procent =  Download.progress;
-            while (procent < 100)
-            {
-                procent = Download.progress;
-            }
-            label1.Text = "Download Complete.";
         }
     }
 }

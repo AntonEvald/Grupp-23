@@ -92,8 +92,9 @@ namespace WindowsFormsApp1
             else
             {
                 DownloadMp3 download = new DownloadMp3();
-                download.Download(a, listBox1.SelectedItem.ToString());
-                DownloadWindow window = new DownloadWindow();
+                var b = listBox1.SelectedItem.ToString();
+                download.Download(a, b);
+                DownloadWindow window = new DownloadWindow(b);
                 window.Show();
             }
 
