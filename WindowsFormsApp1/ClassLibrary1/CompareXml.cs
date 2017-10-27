@@ -27,8 +27,8 @@ namespace ClassLibrary1
             var a = nodeList.InnerText;
             var b = FetchXml.DownloadXml(a);
             var c = load.ReadXml(e);
-            int old = c.GetElementsByTagName("Item").Count;
-            int rss = b.GetElementsByTagName("Item").Count;
+            int old = c.GetElementsByTagName("item").Count;
+            int rss = b.GetElementsByTagName("item").Count;
             Debug.WriteLine(old);
             Debug.WriteLine(rss);
             if (old < rss)

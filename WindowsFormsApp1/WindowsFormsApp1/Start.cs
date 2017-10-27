@@ -21,13 +21,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_DoubleClick);
             fillCombo();
-            IntervalClass.updateTitles(IntervalClass.toBeUpdatedList());
-            foreach (var listitem in IntervalClass.toBeUpdatedList())
-            {
-                Debug.WriteLine(listitem);
-            }
-            
-            //new Thread(() => IntervalClass.updateTitles(IntervalClass.toBeUpdatedList())) { IsBackground = true }.Start();
+            new Thread(() => IntervalClass.updateTitles(IntervalClass.toBeUpdatedList())) { IsBackground = true }.Start();
 
         }
 
