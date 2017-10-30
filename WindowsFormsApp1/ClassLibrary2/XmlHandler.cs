@@ -80,7 +80,7 @@ namespace ClassLibrary2
         {
             try
             {
-                string lastUpdate = DateTime.Now.ToString();
+                
                 XDocument xdoc = XDocument.Load("xml.xml");
                 XElement feeds = xdoc.Element("Feeds");
                 feeds.Add(new XElement("Feed",
@@ -90,7 +90,6 @@ namespace ClassLibrary2
                     new XElement("Category", cat),
                     new XElement("Interval", interval),
                     new XElement("NextUpdate", nextupdate),
-                    new XElement("LastUpdate", lastUpdate),
                     new XElement("Played", isPlayed)));
                 xdoc.Save("xml.xml");
             }
