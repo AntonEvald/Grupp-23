@@ -29,8 +29,8 @@ namespace WindowsFormsApp1
             else
             {
                 Feeds.RemoveFromXml(feed);
-                Remove remove = new Remove();
-                remove.RemoveMp3(feed);
+                RemoveMp3 remove = new RemoveMp3();
+                remove.removeMp3(feed);
                 MessageBox.Show(feed + " har tagits bort!");
                 Close();
             }

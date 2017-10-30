@@ -8,10 +8,10 @@ using System.IO;
 
 namespace ClassLibrary1
 {
-    public class Remove
+    public class RemoveMp3
     {
 
-        public void RemoveMp3(string e)
+        public void removeMp3(string e)
         {
 
 
