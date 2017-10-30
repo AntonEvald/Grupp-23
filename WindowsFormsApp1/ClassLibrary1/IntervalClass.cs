@@ -31,13 +31,13 @@ namespace ClassLibrary1
             {
                 CompareXml CX = new CompareXml();
                 CX.Compare(title);
-                XmlConection.setNextupdate(title);
+                XmlHandler.setNextupdate(title);
             }
         }
         public static List<string> toBeUpdatedList()
         {
             List<string> listan = new List<string>();
-            listan = XmlConection.getNextUpdate();
+            listan = XmlHandler.getNextUpdate();
             return listan;
         }
 

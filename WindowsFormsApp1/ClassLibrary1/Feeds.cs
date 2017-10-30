@@ -57,7 +57,7 @@ namespace ClassLibrary1
                     XmlNode parent = node.ParentNode;
                     parent.RemoveChild(node);
                     xmlDoc.Save("xml.xml");
-                    XmlConection.removeXmlFile(title);
+                    XmlHandler.removeXmlFile(title);
                 }
                 
             }
@@ -168,7 +168,7 @@ namespace ClassLibrary1
         CompareXml CompareXml = new CompareXml();
         public void Podcastlink(string Url, string cat, string interval, string nextupdate)
         {
-            XmlConection xmlConection = new XmlConection();
+            XmlHandler xmlConection = new XmlHandler();
             XmlDocument podcastfeed = FetchXml.DownloadXml(Url);
             var name = FeedName(podcastfeed);
             Podcastlink(name);
@@ -180,7 +180,7 @@ namespace ClassLibrary1
             }
             else
             {
-                XmlConection.createXml();
+                XmlHandler.createXml();
                 xmlConection.writeToXml(name, Url, cat, interval, nextupdate, "No");
             }
 
@@ -188,7 +188,7 @@ namespace ClassLibrary1
         public void Podcastlink(string title)
         {
 
-            XmlConection xml = new XmlConection();
+            XmlHandler xml = new XmlHandler();
             if (File.Exists("played.xml"))
             {
                 XDocument doc = XDocument.Load("Played.xml");
@@ -201,7 +201,7 @@ namespace ClassLibrary1
 
             else
             {
-                XmlConection.createXml(title);
+                XmlHandler.createXml(title);
                 xml.writeToXml(title);
             }
 

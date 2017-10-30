@@ -12,9 +12,9 @@ namespace ClassLibrary1
 
         public void PlayMp3File(string s, string a)
         {
-            XmlConection xmlConection = new XmlConection();
+            XmlHandler xmlConection = new XmlHandler();
             System.Diagnostics.Process.Start(@"..\Mp3\"+a+@"\"+s+".mp3");
-            XmlConection.setPlayedYes(s);
+            XmlHandler.setPlayedYes(s);
         }
 
 
