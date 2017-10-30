@@ -23,10 +23,10 @@ namespace ClassLibrary1
 
         }
 
-        public static string CreateMp3Folder()
+        public static string CreateMp3Folder(string name)
         {
 
-            string folder = @"..\Mp3";
+            string folder = @"..\Mp3\"+name;
             var dir = new DirectoryInfo(folder);
 
             if (dir.Exists == false)

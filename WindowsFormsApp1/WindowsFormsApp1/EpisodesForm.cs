@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
            if(button1.Text.ToString().Contains("Play Episode"))
             {
                 PlayMp3 play = new PlayMp3();
-                play.PlayMp3File(episode); 
+                play.PlayMp3File(episode, a); 
             }
             else
             {

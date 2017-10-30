@@ -24,8 +24,8 @@ namespace ClassLibrary1
 
             nodeList = root.SelectSingleNode("descendant::item[title='" + f + "']/enclosure/@url");
             var link = nodeList.InnerText;
-            var folder = CreateFolders.CreateMp3Folder();
-            client.DownloadFileAsync(new Uri(link), folder + @"\"+e+@"\" + f + ".mp3");
+            var folder = CreateFolders.CreateMp3Folder(e);
+            client.DownloadFileAsync(new Uri(link), folder + @"\"+ f + ".mp3");
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
         }
@@ -41,13 +41,9 @@ namespace ClassLibrary1
             MessageBox.Show("Download Complete");
         }
 
-        public void Cancel(string e)
+        public void Cancel()
         {
-            client.CancelAsync();
-            Remove remove = new Remove();
-            remove.RemoveMp3(e);
-
-
+            client.CancelAsync();   
         }
     }
 
