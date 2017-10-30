@@ -29,6 +29,8 @@ namespace WindowsFormsApp1
             else
             {
                 PodcastNames.RemoveFromXml(feed);
+                Remove remove = new Remove();
+                remove.RemoveMp3(feed);
                 MessageBox.Show(feed + " har tagits bort!");
                 Close();
             }
