@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
         {
             string category = changeCombo.GetItemText(this.changeCombo.SelectedItem);
             string newCategory = ChangeToField.Text;
+            Validation v = new Validation();
             if(Validation.textEmpty(category))
             {
                 MessageBox.Show("Välj en kategori att ändra!");
@@ -30,10 +31,10 @@ namespace WindowsFormsApp1
             }
             else
             {
-                if (Validation.IsNewCat(newCategory))
+                if (v.IsNewCat(newCategory))
                 {
-                    ModifyCategories.RemoveCategory(category);
-                    ModifyCategories.AddCategory(newCategory);
+                    Categories.RemoveCategory(category);
+                    Categories.AddCategory(newCategory);
                     MessageBox.Show("Kategorin: " + category + " har ändrats till: " + newCategory);
                     Close();
                 }
@@ -51,7 +52,7 @@ namespace WindowsFormsApp1
 
         public void fillChangeCombo()
         {
-            List<string> list = ModifyCategories.Categories;
+            List<string> list = Categories.CategoryList;
             changeCombo.Items.Clear();
             for (int i = 0; i < list.Count; i++)
             {

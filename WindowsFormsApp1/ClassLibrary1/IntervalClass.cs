@@ -22,7 +22,7 @@ namespace ClassLibrary1
         public static void setNewInterval()
         {
             CompareXml checkXml = new CompareXml();
-            checkXml.Comapare("e");
+            checkXml.Compare("e");
 
         }
         public static void updateTitles(List<string> titles)
@@ -30,14 +30,14 @@ namespace ClassLibrary1
             foreach (string title in titles)
             {
                 CompareXml CX = new CompareXml();
-                CX.Comapare(title);
-                XmlConection.setNextupdate(title);
+                CX.Compare(title);
+                XmlHandler.setNextupdate(title);
             }
         }
         public static List<string> toBeUpdatedList()
         {
             List<string> listan = new List<string>();
-            listan = XmlConection.getNextUpdate();
+            listan = XmlHandler.getNextUpdate();
             return listan;
         }
 

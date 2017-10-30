@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace ClassLibrary2
 {
-    public class XmlConection
+    public class XmlHandler
     {
         public static DateTime aDay = DateTime.Now.AddDays(1);
         public static DateTime aWeek = DateTime.Now.AddDays(7);

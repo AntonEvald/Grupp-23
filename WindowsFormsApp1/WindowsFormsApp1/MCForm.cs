@@ -22,18 +22,21 @@ namespace WindowsFormsApp1
         {
             AddCategory ac = new AddCategory();
             ac.Show();
+            Close();
         }
 
         private void ChangeCatBtn_Click(object sender, EventArgs e)
         {
             ChangeCategory cc = new ChangeCategory();
             cc.Show();
+            Close();
         }
 
         private void RemoveCatBtn_Click(object sender, EventArgs e)
         {
             RemoveCategory rc = new RemoveCategory();
             rc.Show();
+            Close();
         }
     }
 }

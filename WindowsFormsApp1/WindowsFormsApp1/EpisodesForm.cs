@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
     public partial class EpisodesForm : Form
     {
         private string a;
-        Fetch_Podcast podcast;
+        Feeds podcast;
         XmlDocument xml;
         string episode;
         CompareXml compare = new CompareXml();
@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.a = a;
             listBox1.MouseClick += new MouseEventHandler(listBox1_Click);
-            podcast = new Fetch_Podcast();
+            podcast = new Feeds();
             xml = new XmlDocument();
             xml.Load(@"..\XmlFeeds\" + a + ".xml");
             
@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
         {
             label1.Text = a;
             label2.Text = "description";;
-            var list = podcast.Episodes(xml);
+            var list = Episodes.ListEpisodes(xml);
             listBox1.DataSource = list;
         }
 
@@ -54,10 +54,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
         private void listBox1_Click(object sender, MouseEventArgs e)
         {
 
@@ -66,11 +62,11 @@ namespace WindowsFormsApp1
             {
                 string episode = listBox1.SelectedItem.ToString();
                 this.episode = episode;
-                var list = podcast.Description(xml, episode);
+                var list = Episodes.Description(xml, episode);
                 podcast.Podcastlink(episode);
                 CheckIfPlayed(episode);
                 textBox1.Text = list;
-                if (File.Exists(@"..\Mp3\" + episode + ".mp3"))
+                if (File.Exists(@"..\Mp3\"+a+@"\" + episode + ".mp3"))
                 {
                     button1.Text = "Play Episode";
                 }
@@ -87,7 +83,7 @@ namespace WindowsFormsApp1
            if(button1.Text.ToString().Contains("Play Episode"))
             {
                 PlayMp3 play = new PlayMp3();
-                play.PlayMp3File(episode); 
+                play.PlayMp3File(episode, a); 
             }
             else
             {

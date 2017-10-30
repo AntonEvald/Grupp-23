@@ -7,27 +7,24 @@ using System.IO;
 
 namespace ClassLibrary1
 {
-    public class ModifyCategories
+    public class Categories
     {
-        public static List <string> Categories = new List<string>();
+        public static List <string> CategoryList = new List<string>();
 
         public static void RemoveCategory(String c)
         {
             if(c != "")
             {
-                Categories.Remove(c);
-            }
-            else
-            {
-
+                CategoryList.Remove(c);
             }
         }
 
         public static void AddCategory(String c)
         {
-            if (Validation.IsNewCat(c))
+            Validation v = new Validation();
+            if (v.IsNewCat(c))
             {
-                Categories.Add(c);
+                CategoryList.Add(c);
             }
         }
 
@@ -39,7 +36,7 @@ namespace ClassLibrary1
                 string directory = Path.GetDirectoryName(path);
                 string dirPath = directory + "//categories.txt";
                 StreamWriter textWriter = new StreamWriter(dirPath, false);
-                foreach (string category in Categories)
+                foreach (string category in CategoryList)
                 {
                     textWriter.WriteLine(category);
                 }
@@ -67,12 +64,12 @@ namespace ClassLibrary1
                 }
                 else
                 {
-                    Categories.Clear();
+                    CategoryList.Clear();
                     StreamReader sr = new StreamReader(dirPath, false);
                     while (sr.Peek() != -1)
                     {
                         string category = sr.ReadLine();
-                        Categories.Add(category);
+                        CategoryList.Add(category);
                     }
                     sr.Close();
                 }

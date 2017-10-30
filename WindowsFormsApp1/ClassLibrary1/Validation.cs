@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
-    public class Validation
+    public class Validation : CategoryValidation
     {
         public static bool textEmpty(string s)
         {
@@ -35,9 +35,9 @@ namespace ClassLibrary1
             }
         }
 
-        public static bool IsNewCat(string c)
+        public override bool IsNewCat(string c)
         {
-            foreach (string category in ModifyCategories.Categories)
+            foreach (string category in Categories.CategoryList)
             {
                 if (c.Equals(category, StringComparison.InvariantCultureIgnoreCase))
                 {

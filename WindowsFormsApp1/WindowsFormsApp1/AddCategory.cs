@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
 
         private void OKbtn_Click(object sender, EventArgs e)
         {
+            Validation v = new Validation();
             string category = textBox1.Text;
             if (Validation.textEmpty(category))
             {
@@ -27,10 +28,10 @@ namespace WindowsFormsApp1
             }
             else
             {
-                if (Validation.IsNewCat(category))
+                if (v.IsNewCat(category))
                 {
-                    Validation.IsNewCat(category);
-                    ModifyCategories.AddCategory(category);
+                    v.IsNewCat(category);
+                    Categories.AddCategory(category);
                     MessageBox.Show("Kategorin: " + category + " har lagts till!");
                     Close();
                 }
