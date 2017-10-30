@@ -133,16 +133,18 @@ namespace ClassLibrary2
         public static string getSingleNextUpdate(string title)
         {
             XmlDocument xdoc = new XmlDocument();
+            xdoc.Load("xml.xml");
             XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
             XmlNode NextUpdateNode = node.SelectSingleNode("NextUpdate");
-            return NextUpdateNode.ToString();
+            return NextUpdateNode.InnerText;
         }
         public static string getIntString(string title)
         {
             XmlDocument xdoc = new XmlDocument();
+            xdoc.Load("xml.xml");
             XmlNode node = xdoc.SelectSingleNode("/Feeds/Feed[@id='" + title + "']");
             XmlNode IntervalNode = node.SelectSingleNode("Interval");
-            return IntervalNode.ToString();
+            return IntervalNode.InnerText;
         }
         public static void setNextupdate(string title)
         {
