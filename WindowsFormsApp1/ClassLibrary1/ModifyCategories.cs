@@ -17,10 +17,6 @@ namespace ClassLibrary1
             {
                 Categories.Remove(c);
             }
-            else
-            {
-
-            }
         }
 
         public static void AddCategory(String c)
