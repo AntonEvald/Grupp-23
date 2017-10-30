@@ -27,14 +27,8 @@ namespace ClassLibrary1
             var folder = CreateFolders.CreateMp3Folder(e);
             client.DownloadFileAsync(new Uri(link), folder + @"\"+ f + ".mp3");
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
-            client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(DownloadProgressChanged);
         }
 
-        public void DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-
-           
-        }
 
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {

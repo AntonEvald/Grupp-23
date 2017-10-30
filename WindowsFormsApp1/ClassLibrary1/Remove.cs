@@ -11,13 +11,6 @@ namespace ClassLibrary1
     public class Remove
     {
 
-        public void RemoveFeeds()
-        {
-
-
-
-        }
-
         public void RemoveMp3(string e)
         {
 
