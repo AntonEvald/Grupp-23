@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
                 if (Validation.IsNewCat(category))
                 {
                     Validation.IsNewCat(category);
-                    ModifyCategories.AddCategory(category);
+                    Categories.AddCategory(category);
                     MessageBox.Show("Kategorin: " + category + " har lagts till!");
                     Close();
                 }

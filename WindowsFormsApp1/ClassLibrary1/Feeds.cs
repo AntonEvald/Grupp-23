@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace ClassLibrary1
 {
-    public class PodcastNames
+    public class Feeds
     {
 
         public static List<string> getPodcastsFromXML()
@@ -163,6 +163,56 @@ namespace ClassLibrary1
                 return filtredList;
             }
             
+        }
+
+        CompareXml CompareXml = new CompareXml();
+        public void Podcastlink(string Url, string cat, string interval, string nextupdate)
+        {
+            XmlConection xmlConection = new XmlConection();
+            XmlDocument podcastfeed = FetchXml.DownloadXml(Url);
+            var name = FeedName(podcastfeed);
+            Podcastlink(name);
+            var folder = CreateFolders.CreateXmlFolder();
+            podcastfeed.Save(folder + @"\" + name + ".xml");
+            if (File.Exists("xml.xml"))
+            {
+                xmlConection.writeToXml(name, Url, cat, interval, nextupdate, "No");
+            }
+            else
+            {
+                XmlConection.createXml();
+                xmlConection.writeToXml(name, Url, cat, interval, nextupdate, "No");
+            }
+
+        }
+        public void Podcastlink(string title)
+        {
+
+            XmlConection xml = new XmlConection();
+            if (File.Exists("played.xml"))
+            {
+                XDocument doc = XDocument.Load("Played.xml");
+                var CustNoExist = doc.Descendants("Title").Any(x => (string)x == title);
+                if (CustNoExist == false)
+                {
+                    xml.writeToXml(title);
+                }
+            }
+
+            else
+            {
+                XmlConection.createXml(title);
+                xml.writeToXml(title);
+            }
+
+
+        }
+
+        public string FeedName(XmlDocument e)
+        {
+            var a = e.SelectSingleNode("(//title)[1]");
+            string b = a.InnerText;
+            return b;
         }
     }
 }

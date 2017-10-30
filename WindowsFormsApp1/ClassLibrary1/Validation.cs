@@ -37,7 +37,7 @@ namespace ClassLibrary1
 
         public static bool IsNewCat(string c)
         {
-            foreach (string category in ModifyCategories.Categories)
+            foreach (string category in Categories.CategoryList)
             {
                 if (c.Equals(category, StringComparison.InvariantCultureIgnoreCase))
                 {

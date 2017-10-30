@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
         private void fillFeedCombo()
         {
             PickFeedCombo.Items.Clear();
-            List<string> titles = PodcastNames.getPodcastsFromXML();
+            List<string> titles = Feeds.getPodcastsFromXML();
             foreach (string title in titles)
             {
                 PickFeedCombo.Items.Add(title);
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
         private void fillCatCombo()
         {
-            List<string> list = ModifyCategories.Categories;
+            List<string> list = Categories.CategoryList;
             foreach(string category in list)
             {
                 changeCatCombo.Items.Add(category);
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        PodcastNames.UpdateXml(feed, newCat, newInt);
+                        Feeds.UpdateXml(feed, newCat, newInt);
                         MessageBox.Show("Feeden: " + feed + " har ändrats!");
                         Close();
                     }

@@ -15,7 +15,7 @@ namespace ClassLibrary1
         FetchXml fetch = new FetchXml();
         LoadXml load = new LoadXml();
 
-        public void Comapare(string e)
+        public void Compare(string e)
         {
             XmlDocument doc = new XmlDocument();
             XmlDocument doc2 = new XmlDocument();

@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         
         public void FillCatCombo()
         {
-            List<string> list = ModifyCategories.Categories;
+            List<string> list = Categories.CategoryList;
             AddFeedCategoryCB.Items.Clear();
             for (int i = 0; i < list.Count; i++)
             {
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
             
             try
             {
-                Fetch_Podcast Fp = new Fetch_Podcast();
+                Feeds Fp = new Feeds();
                 string chosenCat = AddFeedCategoryCB.GetItemText(this.AddFeedCategoryCB.SelectedItem);
                 string chosenUrl = urlTB.Text;
                 string chosenInt = IntervallCb.GetItemText(this.IntervallCb.SelectedItem);
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
                 {
                     if (!Validation.textEmpty(chosenUrl))
                     {
-                        if (!PodcastNames.FeedExists(chosenUrl))
+                        if (!Feeds.FeedExists(chosenUrl))
                         {
                             if (chosenInt == "Every day")
                             {

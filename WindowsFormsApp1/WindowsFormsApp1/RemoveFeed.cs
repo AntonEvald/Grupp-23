@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                PodcastNames.RemoveFromXml(feed);
+                Feeds.RemoveFromXml(feed);
                 Remove remove = new Remove();
                 remove.RemoveMp3(feed);
                 MessageBox.Show(feed + " har tagits bort!");
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
         private void fillCombo()
         {
             removeCombo.Items.Clear();
-            List<string> titles = PodcastNames.getPodcastsFromXML();
+            List<string> titles = Feeds.getPodcastsFromXML();
             foreach(string title in titles)
             {
                 removeCombo.Items.Add(title);

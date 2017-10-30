@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
 
         public void fillCombo()
         {
-            List <string> list = ModifyCategories.Categories;
+            List <string> list = Categories.CategoryList;
             categoryCombo.Items.Clear();
             categoryCombo.Items.Add("All");
             for (int i = 0; i < list.Count; i++)
@@ -63,13 +63,13 @@ namespace WindowsFormsApp1
  
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ModifyCategories.SaveCategories();
+            Categories.SaveCategories();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ModifyCategories.GetCategories();
-            List<string> titles = PodcastNames.getPodcastsFromXML();
+            Categories.GetCategories();
+            List<string> titles = Feeds.getPodcastsFromXML();
             listBox1.DataSource = titles;
         }
 
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            List<string> titles = PodcastNames.getPodcastsFromXML();
+            List<string> titles = Feeds.getPodcastsFromXML();
             listBox1.DataSource = titles;
         }
 
@@ -107,7 +107,7 @@ namespace WindowsFormsApp1
         private void categoryCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedCat = categoryCombo.GetItemText(this.categoryCombo.SelectedItem);
-            List<string> filtredTitles = PodcastNames.fList(selectedCat);
+            List<string> filtredTitles = Feeds.fList(selectedCat);
             listBox1.DataSource = filtredTitles;
         }
     }
