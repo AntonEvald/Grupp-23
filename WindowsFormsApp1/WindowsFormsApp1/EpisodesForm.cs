@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
                 podcast.Podcastlink(episode);
                 CheckIfPlayed(episode);
                 textBox1.Text = list;
-                if (File.Exists(@"..\Mp3\" + episode + ".mp3"))
+                if (File.Exists(@"..\Mp3\"+a+@"\" + episode + ".mp3"))
                 {
                     button1.Text = "Play Episode";
                 }
