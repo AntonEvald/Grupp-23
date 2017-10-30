@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClassLibrary1;
 using System.Threading;
+using System.Diagnostics;
 
 namespace WindowsFormsApp1
 {
@@ -20,8 +21,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             listBox1.MouseDoubleClick += new MouseEventHandler(listBox1_DoubleClick);
             fillCombo();
-
-            //new Thread(() => IntervalClass.updateTitles(IntervalClass.toBeUpdatedList())) { IsBackground = true }.Start();
+            new Thread(() => IntervalClass.updateTitles(IntervalClass.toBeUpdatedList())) { IsBackground = true }.Start();
 
         }
 

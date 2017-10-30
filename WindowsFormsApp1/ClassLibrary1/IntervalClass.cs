@@ -31,6 +31,7 @@ namespace ClassLibrary1
             {
                 CompareXml CX = new CompareXml();
                 CX.Comapare(title);
+                XmlConection.setNextupdate(title);
             }
         }
         public static List<string> toBeUpdatedList()
