@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryValidation.cs" />
     <Compile Include="CompareXml.cs" />
     <Compile Include="CreateFolders.cs" />
     <Compile Include="DownloadMp3.cs" />

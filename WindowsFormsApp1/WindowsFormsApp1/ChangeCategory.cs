@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
         {
             string category = changeCombo.GetItemText(this.changeCombo.SelectedItem);
             string newCategory = ChangeToField.Text;
+            Validation v = new Validation();
             if(Validation.textEmpty(category))
             {
                 MessageBox.Show("Välj en kategori att ändra!");
@@ -30,7 +31,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                if (Validation.IsNewCat(newCategory))
+                if (v.IsNewCat(newCategory))
                 {
                     Categories.RemoveCategory(category);
                     Categories.AddCategory(newCategory);

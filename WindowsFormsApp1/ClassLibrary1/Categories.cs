@@ -21,7 +21,8 @@ namespace ClassLibrary1
 
         public static void AddCategory(String c)
         {
-            if (Validation.IsNewCat(c))
+            Validation v = new Validation();
+            if (v.IsNewCat(c))
             {
                 CategoryList.Add(c);
             }
