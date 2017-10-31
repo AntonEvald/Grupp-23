@@ -11,11 +11,16 @@ namespace ClassLibrary1
     public class RemoveMp3
     {
 
+
+        
         public void removeMp3(string e)
         {
 
-
-            System.IO.Directory.Delete(@"..\Mp3\" + e, true);
+            if(Directory.Exists(@"..\Mp3\" + e))
+            {
+                System.IO.Directory.Delete(@"..\Mp3\" + e, true);
+            }
+            
 
         }
       
